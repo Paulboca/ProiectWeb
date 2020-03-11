@@ -2,17 +2,18 @@
 html {
   background-color: #FFF9EE;
 }
+
 .parent{
 	position:fixed;
 	top:0;
-	left:0;
+	left: 0;
 	margin:auto;
 	width: 100%;
 }
 .navbar {
 	display:flex;
 	justify-content:center;
-	 background-color: #333;
+	 background-color: #111111;
 }
 .menu {
   display: flex;
@@ -23,23 +24,30 @@ html {
   justify-content: center;
   align-items: center;
   list-style: none;
-  background-color: 333;
+  background-color: #111111;
 }
-.menu li {
+.linkMenu {
   padding: 20px;
   margin-left: 10px;
   margin-right: 10px;
-  background-color: 333;
-  color: rgba(255, 0, 0, 0.9);
+  background-color: #111111;
+  color: rgb(255,249,238, 1);
   font-size: 24px;
   font-weight: bold;
+  text-decoration: none;
 }
-.menu li:hover {
+.linkMenu:hover {
   background: #999999;
   color: black;
 }
 .main{
 	padding: 30px;
   margin-top: 90px;
+}
+.poza2{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
 }
 /* scrie cod css aici */
