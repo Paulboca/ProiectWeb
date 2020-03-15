@@ -1,0 +1,44 @@
+html, body{
+    position: static;
+   /* height: 100%; */
+   /* width: 100%; */
+   background-color: #E6E6EA;
+}
+.textbox{
+   position: relative;
+   top: 0vh;
+   left: 35vw;
+   height: 80vh;
+   width: 30vw;
+   background-color: white;
+   min-height: 300px;
+   min-width: 400px;
+}
+.login{
+   position: relative;
+   top: 10%;
+   left: 5%;
+   width: 90%;
+   font-size: 20px;
+}
+p{
+   text-align: center;
+   font-size: x-large;
+   font-weight: bold;
+}
+#email,#password{
+   border: 2px solid grey;
+   border-radius: 4px; 
+   height: 30px;
+   width: 100%;
+   font-family:inherit;
+   text-align: center;
+}
+#continue{
+   position: relative;
+   top: 5vh;
+   left: 51%;
+   width: 49%;
+   font-size: 16px;
+   /* right: 150px; */
+}

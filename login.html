@@ -1,63 +1,49 @@
 <!doctype html>
 <html lang="en">
 <head>
-<!--    <link href="style_index.css" rel="stylesheet">-->
+   <link href="style_index.css" rel="stylesheet">
+   <link href="style_login.css" rel="stylesheet">
     <meta charset="utf-8">
     <title>Login page</title>
-    <style>
-         html, body{
-             position: fixed;
-            height: 100%;
-            width: 100%;
-            background-color: #E6E6EA;
-        }
-        .textbox{
-            position: relative;
-            top: 10%;
-            left: 10%;
-            background-color: white;
-            height: 80%;
-            width: 80%;
-/*            border-bottom-color: coral;*/
-        }
-        .login{
-            position: absolute;
-            top: 10%;
-            left: 20%;
-            width: 60%;
-            font-size: 20px;
-        }
-        #cont{
-            position: relative;
-            top: 5vh;
-            right: 150px;
-        }
-        #email,#password{
-            border: 2px solid grey;
-            border-radius: 4px; 
-            height: 30px;
-            width: 100%;
-            font-family:inherit;
-            text-align: center;
-        }
-    </style>
     </head>
 <body>
-    <div class="textbox">         <table class="login">
-            <th><p>Login</p></th>
-        <tr>
-            <div >
-            <label>Email:</label><br/>
-            <input type="email" id="email" name="email" maxlength="100" placeholder="Email">
-            </div></tr>
-        <tr>
-        <div >
-            <label>Password:</label><br/>
-            <input type="password" id="password" name="pswd" placeholder="Password" maxlength="100">        
-                </div></tr>
-            <br/>
-            <button class="login" id="cont">Continue</button>
-        </table>
+    <!-- menu bar -->
+    <div class="parent">
+		<div class="navbar">
+		
+		<div class="menu">
+		<ul>
+		<li><img class = "logo" src="img/logo.png" alt="Imaginea campaniei"/></li>
+		<li><a class="linkMenu" href="index.html">Home</a></li>
+		<li><a class="linkMenu" href="#news">News</a></li>
+		<li><a class="linkMenu" href="#shop">Shop</a></li>
+		<li><a class="linkMenu" href="login.html">Login</a></li>
+		<li><a class="linkMenu" href="#shoppingbag">Shopping Bag</a></li>
+		<li><a class="linkMenu" href="#favourites">Favourites</a></li>
+		
+		</ul>
+		</div>
+		</div>
+        </div>
+        
+    <div class="textbox">
+        <div class="login">
+            <p>Login</p>
+        </div>
+        <div class="login">
+        <label>Email:</label><br/>
+        <input type="email" id="email" name="email" maxlength="100" placeholder="Email">
+        </div>
+
+        <div class="login">
+        <label>Password:</label><br/>
+        <input type="password" id="password" name="pswd" placeholder="Password" maxlength="100">        
+        </div>
+
+        <!-- <br/> -->
+        <div class="login">
+            <button  id="continue">Continue</button>
+        </div>
     </div>
 </body>
 </html>

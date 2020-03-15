@@ -1,19 +1,23 @@
 
 html {
-  background-color: #FFF9EE;
+  background-color: #E6E6EA;
+  /* width: 100%; */
+
 }
 
 .parent{
-	position:fixed;
+	position: sticky;
 	top:0;
 	left: 0;
 	margin:auto;
-	width: 100%;
+  width: 100%;
+  min-width: 950px;
+  z-index: 1;
 }
 .navbar {
 	display:flex;
 	justify-content:center;
-	 background-color: #111111;
+	background-color: #111111;
 }
 .menu {
   display: flex;
