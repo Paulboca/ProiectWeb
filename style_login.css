@@ -5,14 +5,17 @@ html, body{
    background-color: #E6E6EA;
 }
 .textbox{
-   position: relative;
-   top: 0vh;
-   left: 35vw;
-   height: 80vh;
-   width: 30vw;
+   position: absolute;
+   top: 0%;
+   left: 50%;
+
+   margin-left: -15em;
+   margin-top: 5em;
+   margin-bottom: 5em;
+
+   height: 40em;
+   width: 30em;
    background-color: white;
-   min-height: 300px;
-   min-width: 400px;
 }
 .login{
    position: relative;
@@ -21,24 +24,49 @@ html, body{
    width: 90%;
    font-size: 20px;
 }
-p{
+#login_logo{
+   margin-top: 0em;
    text-align: center;
-   font-size: x-large;
+   font-size: 70px;
    font-weight: bold;
+   font-family: 'Dancing Script';
 }
 #email,#password{
    border: 2px solid grey;
-   border-radius: 4px; 
-   height: 30px;
+   border-radius: 10px; 
+   height: 50px;
    width: 100%;
-   font-family:inherit;
-   text-align: center;
+   font-family: 'Raleway', sans-serif;;
+   font-size: 25px;
+   text-align: left;
+   text-indent: 1em;
 }
-#continue{
-   position: relative;
-   top: 5vh;
-   left: 51%;
-   width: 49%;
-   font-size: 16px;
+#login_to_account{
+   position: absolute;
+   top: 5em;
+   /* left: 51%; */
    /* right: 150px; */
+   height: 50px;
+   width: 100%;
+   font-size: 16px;
+   font-weight: bold;
+   font-family: serif;
+   border-radius: 10px; 
+   /* background-color: #F7E29D; */
+}
+#login_to_account:hover{
+   background-color: rgb(175, 174, 174);
+}
+#forgot_password{
+   position: absolute;
+   top: 8em;
+   text-align: center;
+   font-size: medium;
+}
+#sign_up{
+   position: absolute;
+   top: 14em;
+   text-align: right;
+   font-size: medium;
+   font-family: 'Baloo Thambi 2', cursive;
 }
