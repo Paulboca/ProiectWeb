@@ -1,7 +1,5 @@
 html, body{
-    position: static;
-   /* height: 100%; */
-   /* width: 100%; */
+   /* position: static; */
    background-color: #E6E6EA;
 }
 .textbox{
@@ -66,7 +64,12 @@ html, body{
 #sign_up{
    position: absolute;
    top: 14em;
+   margin-left: 20em;
+   width: 4em;
    text-align: right;
    font-size: medium;
    font-family: 'Baloo Thambi 2', cursive;
+}
+*:focus{
+   outline: none;
 }

@@ -1,7 +1,11 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <link href="style_index.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+	<link href="style_index.css" rel="stylesheet">
+	<link href="style_changePasswd.css" rel="stylesheet">
     <title>Change Password</title>
 </head>
 <body>
@@ -24,8 +28,37 @@
 		</div>
     </div>
 
-    <div>
-        
+    <div class="textbox">
+        <div class="changePasswd">
+            <p id="change_passwd_logo1">Change</p>
+		</div>
+		<div class="changePasswd">
+            <p id="change_passwd_logo2">Password</p>
+		</div> <br>
+		
+		<div class="changePasswd">
+        	<input type="email" id="email" name="email" 
+            	maxlength="100" placeholder="Email">
+        </div>
+
+        <div class="changePasswd">
+        	<input type="password" id="password" name="pswd" 
+            	placeholder="New Password" maxlength="100">        
+		</div>
+
+		<div class="changePasswd">
+        	<input type="password" id="cpassword" name="cpswd" 
+            	placeholder="Confirm Password" maxlength="100">        
+        </div>
+
+        <div class="changePasswd">
+            <button  id="continue">CONTINUE</button>
+		</div>
+		
+        <div class="changePasswd">
+			<a class="changePasswd" id="login" href="login.html">LOGIN</a>
+			<a class="changePasswd" id="sign_up" href="sign_up.html">SIGN UP</a>
+        </div>
     </div>
 </body>
 </html>
