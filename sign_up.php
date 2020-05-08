@@ -5,7 +5,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <link href="style_menu.css" rel="stylesheet">
-    <link href="style_index.css" rel="stylesheet">
+    <link href="style_signUp.css" rel="stylesheet">
 	<title>Sign Up</title>
 </head>
 <body>
