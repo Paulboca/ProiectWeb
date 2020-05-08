@@ -4,30 +4,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link href="style_menu.css" rel="stylesheet">
     <link href="style_index.css" rel="stylesheet">
-    <link href="style_signUp.css" rel="stylesheet">
 	<title>Sign Up</title>
 </head>
 <body>
-    <!-- menu bar -->
-    <div class="parent">
-		<div class="navbar">
-		
-		<div class="menu">
-		<ul>
-		<li><img class = "logo" src="img/logo.png" alt="Imaginea campaniei"/></li>
-		<li><a class="linkMenu" href="index.html">Home</a></li>
-		<li><a class="linkMenu" href="#news">News</a></li>
-		<li><a class="linkMenu" href="#shop">Shop</a></li>
-		<li><a class="linkMenu" href="login.html">Login</a></li>
-		<li><a class="linkMenu" href="#shoppingbag">Shopping Bag</a></li>
-		<li><a class="linkMenu" href="#favourites">Favourites</a></li>
-		
-		</ul>
-		</div>
-		</div>
-	</div>
-	
+		<?php
+		include ('menu.php')
+		?>
 	<div class="textbox">
         <div class="signUp">
             <p id="register_logo">Register</p>
@@ -63,7 +47,7 @@
 		</div>
 		
         <div class="signUp">
-            <a class="signUp" id="login" href="login.html">LOGIN</a>
+            <a class="signUp" id="login" href="login.php">LOGIN</a>
         </div>
     </div>
 </body>
