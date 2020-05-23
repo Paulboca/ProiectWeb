@@ -1,67 +1,67 @@
 .textbox{
-    position: absolute;
-    top: 0%;
-    left: 50%;
- 
-    margin-left: -15em;
-    margin-top: 5em;
-    margin-bottom: 5em;
- 
-    height: 46em;
-    width: 30em;
-    background-color: white;
- }
- .signUp{
-    position: relative;
-    top: 10%;
-    left: 5%;
-    width: 90%;
-    font-size: 20px;
- }
+   position: absolute;
+   top: 0%;
+   left: 50%;
+
+   margin-left: -15rem;
+   margin-top: 5rem;
+   margin-bottom: 5rem;
+
+   height: 46rem;
+   width: 30rem;
+   background-color: white;
+}
+.signUp{
+   position: relative;
+   top: 10%;
+   left: 5%;
+   width: 90%;
+   font-size: 20px;
+}
 #register_logo{
-    margin-top: 0em;
-    margin-bottom: 0em;
-    text-align: center;
-    font-size: 70px;
-    font-weight: bold;
-    font-family: 'Dancing Script';
- }
+   margin-top: 0rem;
+   margin-bottom: 0rem;
+   text-align: center;
+   font-size: 70px;
+   font-weight: bold;
+   font-family: 'Dancing Script';
+}
 #email,#password,#cpassword,#fname,#lname{
-    border: 2px solid grey;
-    border-radius: 10px; 
-    height: 50px;
-    width: 100%;
-    font-family: 'Raleway', sans-serif;
-    font-size: 16px;
-    text-align: left;
-    text-indent: 1em;
-    margin-top: 1em;
- }
- #create_account{
-    position: absolute;
-    top: 3em;
-    /* left: 51%; */
-    /* right: 150px; */
-    height: 50px;
-    width: 100%;
-    font-size: 16px;
-    font-weight: bold;
-    font-family: serif;
-    border-radius: 10px; 
-    /* background-color: #F7E29D; */
- }
- #create_account:hover{
-    background-color: rgb(175, 174, 174);
- }
- #login{
-    position: absolute;
-    top: 10em;
-    margin-left: 20em;
-    width: 3em;
-    text-align: right;
-    font-size: medium;
-    font-family: 'Baloo Thambi 2', cursive;
- }
- *:focus{
-     outline: none;
- }
+   border: 2px solid grey;
+   border-radius: 10px; 
+   height: 50px;
+   width: 100%;
+   font-family: 'Raleway', sans-serif;
+   font-size: 16px;
+   text-align: left;
+   text-indent: 1rem;
+   margin-top: 1rem;
+}
+#create_account{
+   position: absolute;
+   top: 3rem;
+   /* left: 51%; */
+   /* right: 150px; */
+   height: 50px;
+   width: 100%;
+   font-size: 16px;
+   font-weight: bold;
+   font-family: serif;
+   border-radius: 10px; 
+   /* background-color: #F7E29D; */
+}
+#create_account:hover{
+   background-color: rgb(175, 174, 174);
+}
+#login{
+   position: absolute;
+   top: 10rem;
+   margin-left: 20rem;
+   width: 3rem;
+   text-align: right;
+   font-size: medium;
+   font-family: 'Baloo Thambi 2', cursive;
+}
+*:focus{
+    outline: none;
+}
