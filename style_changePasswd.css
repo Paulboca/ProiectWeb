@@ -3,12 +3,12 @@
     top: 0%;
     left: 50%;
  
-    margin-left: -15em;
-    margin-top: 5em;
-    margin-bottom: 5em;
+    margin-left: -15rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
  
-    height: 43em;
-    width: 30em;
+    height: 43rem;
+    width: 30rem;
     background-color: white;
  }
  .changePasswd{
@@ -19,24 +19,29 @@
     font-size: 20px;
  }
 #change_passwd_logo1{
-    margin-top: 0em;
-    margin-bottom: 0em;
-    margin-left: 0.2em;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    margin-left: 0.2rem;
     text-align: left;
     font-size: 70px;
     font-weight: bold;
     font-family: 'Dancing Script';
  }
  #change_passwd_logo2{
-    margin-top: 0em;
-    margin-bottom: 0em;
-    margin-right: 0.2em;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    margin-right: 0.2rem;
     text-align: right;
     font-size: 70px;
     font-weight: bold;
     font-family: 'Dancing Script';
  }
-#email,#password,#cpassword{
+#email{
+   background-image: url(img/mail.png);
+   background-repeat: no-repeat;
+   background-position: left;
+   background-position-x: 0.2rem;
+
     border: 2px solid grey;
     border-radius: 10px; 
     height: 50px;
@@ -44,12 +49,28 @@
     font-family: 'Raleway', sans-serif;
     font-size: 16px;
     text-align: left;
-    text-indent: 1em;
-    margin-top: 1em;
+    text-indent: 2.5rem;
+    margin-top: 1rem;
  }
+ #password,#cpassword{
+   background-image: url(img/password.png);
+   background-repeat: no-repeat;
+   background-position: left;
+   background-position-x: 0.2rem;
+
+   border: 2px solid grey;
+   border-radius: 10px; 
+   height: 50px;
+   width: 100%;
+   font-family: 'Raleway', sans-serif;
+   font-size: 16px;
+   text-align: left;
+   text-indent: 2.5rem;
+   margin-top: 1rem;
+}
  #continue{
     position: absolute;
-    top: 4em;
+    top: 4rem;
     height: 50px;
     width: 100%;
     font-size: 16px;
@@ -62,17 +83,17 @@
  }
  #sign_up{
     position: absolute;
-    top: 11em;
-    width: 4em;
+    top: 11rem;
+    width: 4rem;
     text-align: left;
     font-size: medium;
     font-family: 'Baloo Thambi 2', cursive;
  }
  #login{
     position: absolute;
-    top: 11em;
-    margin-left: 21em;
-    width: 3em;
+    top: 11rem;
+    margin-left: 21rem;
+    width: 3rem;
     text-align: right;
     font-size: medium;
     font-family: 'Baloo Thambi 2', cursive;

@@ -7,12 +7,12 @@ html, body{
    top: 0%;
    left: 50%;
 
-   margin-left: -15em;
-   margin-top: 5em;
-   margin-bottom: 5em;
+   margin-left: -15rem;
+   margin-top: 5rem;
+   margin-bottom: 5rem;
 
-   height: 40em;
-   width: 30em;
+   height: 40rem;
+   width: 30rem;
    background-color: white;
 }
 .login{
@@ -23,13 +23,18 @@ html, body{
    font-size: 20px;
 }
 #login_logo{
-   margin-top: 0em;
+   margin-top: 0rem;
    text-align: center;
    font-size: 70px;
    font-weight: bold;
    font-family: 'Dancing Script';
 }
-#email,#password{
+#email{
+   background-image: url(img/mail.png);
+   background-repeat: no-repeat;
+   background-position: left;
+   background-position-x: 0.2rem;
+
    border: 2px solid grey;
    border-radius: 10px; 
    height: 50px;
@@ -37,11 +42,26 @@ html, body{
    font-family: 'Raleway', sans-serif;;
    font-size: 25px;
    text-align: left;
-   text-indent: 1em;
+   text-indent: 2.5rem;
+}
+#password{
+   background-image: url(img/password.png);
+   background-repeat: no-repeat;
+   background-position: left;
+   background-position-x: 0.2rem;
+
+   border: 2px solid grey;
+   border-radius: 10px; 
+   height: 50px;
+   width: 100%;
+   font-family: 'Raleway', sans-serif;;
+   font-size: 25px;
+   text-align: left;
+   text-indent: 2.5rem;
 }
 #login_to_account{
    position: absolute;
-   top: 5em;
+   top: 5rem;
    /* left: 51%; */
    /* right: 150px; */
    height: 50px;
@@ -57,15 +77,15 @@ html, body{
 }
 #forgot_password{
    position: absolute;
-   top: 8em;
+   top: 8rem;
    text-align: center;
    font-size: medium;
 }
 #sign_up{
    position: absolute;
-   top: 14em;
-   margin-left: 20em;
-   width: 4em;
+   top: 14rem;
+   margin-left: 20rem;
+   width: 4rem;
    text-align: right;
    font-size: medium;
    font-family: 'Baloo Thambi 2', cursive;

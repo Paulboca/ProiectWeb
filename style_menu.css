@@ -11,47 +11,209 @@ html {
 	left: 0;
 	margin:auto;
   width: 100%;
-  min-width: 950px;
+  /* min-width: 950px; */
   z-index: 1;
+  /* background-color: #015cb1; */
+  background-color: #00213f;
+
+  /* background-color: #111111; */
 }
 .navbar {
-	display:flex;
-	justify-content:center;
-	background-color: #111111;
+	/* display:flex; */
+  justify-content:center;
+  align-items: center;
+  width: 90%;
+  height: 65px;
+  margin-left: 10%;
+  min-width: 59rem;
+  /* display: inline-block; */
+  /* margin-right: 20%; */
+}
+.logo{
+  border-radius: 100px;
+  float: left;
+  width: 64px;
+  height: 64px;
+
+
+  background-image: url(img/logo1.png);
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 62px;
+  background-position-x: 0.05rem;
+  background-position-y: 0.2rem;
+
+  background-color: white;
 }
 .menu {
-  display: flex;
+  /* display: flex; */
   align-items: center;
+  justify-content: center;
+  /* margin-left: 15%; */
+  /* margin-right: 15%; */
+  min-width: 34rem;
+  width: 40%;
+  float: left;
 }
 .menu ul {
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
-  list-style: none;
-  background-color: #111111;
+  /* list-style: none; */
+  /* background-color: #111111; */
 }
 .linkMenu {
   padding: 20px;
-  margin-left: 10px;
-  margin-right: 10px;
-  background-color: #111111;
-  color: rgb(255,249,238, 1);
+  /* margin-left: 10px; */
+  /* margin-right: 10px; */
+  /* background-color: #111111; */
+  color: white;
   font-size: 24px;
   font-weight: bold;
   text-decoration: none;
 }
 .linkMenu:hover {
-  background: #999999;
-  color: black;
+  /* background: #999999; */
+  background: #00315c;
+  /* color: black; */
 }
-.main{
-	padding: 30px;
-  margin-top: 120px;
+.user{
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-width: 20rem;
+  max-height: 65px;
+  /* display: flex; */
+  /* display: inline; */
+  /* width: 35%; */
+  /* height: 3rem; */
+  float: right;  
+  margin-right: 1%;
 }
-.poza2{
+.logoUser{
+  background-image: url(img/user2.png);
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 51px;
+  /* background-position-x: 0.25rem; */
+  background-position-y: 0.1rem;
+
+  float: left;
+  height: 51px;
+  width: 51px;
+  margin-top: 7px;
+  border-radius: 100px; 
+  background-color: white;
+}
+#ulCover{
+  position: absolute;
+  top: 0%;
+  width: 51px;
+  height: 65px;
+  /* background-color: red; */
+  display: none;
+}
+#ulCover:hover{
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 60%;
 }
-/* scrie cod css aici */
+#ulCover:hover .dropDownMenu{
+  display: block;
+}
+.dropDownMenu{
+  position: absolute;
+  /* display: block; */
+  top: 0%;
+  display: none;
+  margin-top: 65px;
+  /* height: 100px; */
+  max-width: 12rem;
+  background-color: white;
+}
+.dropDownMenu:hover{
+  display: block;
+}
+.logoUser:hover{
+  background-color: rgb(230, 230, 234);
+  background-size: 49px;
+  height: 49px;
+  width: 49px;
+}
+.logoUser:hover #ulCover{
+  display: block;
+}
+#text{
+  /* position: absolute; */
+  color: white;
+  float: left;
+  /* overflow: hidden; */
+  max-width: 8.5rem;
+  max-height: 2.7rem;
+  font-size: 1.2rem;
+  margin-top: 0.7rem;
+  margin-left: 0.5rem;
+  overflow-y: scroll;
+  overflow-wrap: break-word;
+}
+/* scroolbar properties */
+        /* width */
+        ::-webkit-scrollbar {
+          width: 5px;
+        }
+        /* Track */
+        /* ::-webkit-scrollbar-track { */
+          /* background: #f1f1f1;  */
+        /* } */
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+          background: #888; 
+        }
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+          background: #555; 
+        }
+/* until here */
+#fav{
+  background-image: url(img/heart.png);
+  background-repeat: no-repeat;
+  background-position: left;
+  background-position-x: 0.04rem;
+  background-position-y: 0.2rem;
+  /* background-color: white; */
+  background-size: 43px;
+
+  height: 45px;
+  width: 45px;
+  border-radius: 100px; 
+  float: right;
+  margin-top: 10px;
+  margin-left: 1rem;
+  /* font-size: 24px;
+  font-weight: bold;
+  text-decoration: none; */
+}
+#fav:hover{
+  /* background-color:rgba(161, 6, 6, 0.692); */
+  background-size: 41px;
+}
+#bag{
+  background-image: url(img/cart.png);
+  background-repeat: no-repeat;
+  background-position: left;
+  background-position-x: 0.2rem;
+  background-position-y: 0.3rem;
+  /* background-color: white; */
+  background-size: 40px;
+
+  height: 48px;
+  width: 48px;
+  margin-top: 10px;
+  border-radius: 100px; 
+  float: right;
+  margin-left: 1rem;
+}
+#bag:hover{
+  /* background-color: rgba(230, 230, 234, 0.801); */
+  background-size: 38px;
+  /* height: 43px; */
+  /* width: 43px; */
+}

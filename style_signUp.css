@@ -26,7 +26,12 @@
    font-weight: bold;
    font-family: 'Dancing Script';
 }
-#email,#password,#cpassword,#fname,#lname{
+#email{
+   background-image: url(img/mail.png);
+   background-repeat: no-repeat;
+   background-position: left;
+   background-position-x: 0.2rem;
+
    border: 2px solid grey;
    border-radius: 10px; 
    height: 50px;
@@ -34,7 +39,39 @@
    font-family: 'Raleway', sans-serif;
    font-size: 16px;
    text-align: left;
-   text-indent: 1rem;
+   text-indent: 2.5rem;
+   margin-top: 1rem;
+}
+#password,#cpassword{
+   background-image: url(img/password.png);
+   background-repeat: no-repeat;
+   background-position: left;
+   background-position-x: 0.2rem;
+
+   border: 2px solid grey;
+   border-radius: 10px; 
+   height: 50px;
+   width: 100%;
+   font-family: 'Raleway', sans-serif;
+   font-size: 16px;
+   text-align: left;
+   text-indent: 2.5rem;
+   margin-top: 1rem;
+}
+#fname,#lname{
+   background-image: url(img/user.png);
+   background-repeat: no-repeat;
+   background-position: left;
+   background-position-x: 0.2rem;
+
+   border: 2px solid grey;
+   border-radius: 10px; 
+   height: 50px;
+   width: 100%;
+   font-family: 'Raleway', sans-serif;
+   font-size: 16px;
+   text-align: left;
+   text-indent: 2.5rem;
    margin-top: 1rem;
 }
 #create_account{

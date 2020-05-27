@@ -2,6 +2,7 @@
 <html>
 	<head lang="en">
 		<meta charset="utf-8">
+    	<link rel="icon" href="img/logo.png" type="image/ico"> <!-- favicon -->
 		<link href="style_menu.css" rel="stylesheet">
 		<link href="style_shop.css" rel="stylesheet">
 		<title>Fashion E-Shop</title>

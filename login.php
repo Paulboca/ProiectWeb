@@ -7,11 +7,13 @@ $_SESSION['pswd'] = $_POST['pswd'];
 <!doctype html>
 <html lang="en">
 <head>
+    <link rel="icon" href="img/logo.png" type="image/ico"> <!-- favicon -->
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-    <link href="style_menu.css" rel="stylesheet">
-    <link href="style_login.css" rel="stylesheet">
+	<link href="style_menu.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" />
+	<link href="style_login.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" />
+
     <meta charset="utf-8">
     <title>Login</title>
 </head>
@@ -78,8 +80,13 @@ $_SESSION['pswd'] = $_POST['pswd'];
                                         echo "Wrong password";
                                         
                                     } else{
-                                        $_SESSION['user_email'] = $email;
-                                        Header('Location: index.php');
+                                        $sql = "SELECT fName from users where email = '" . $email . " ' ";
+                                        $res = mysqli_query($link, $sql);
+                                        $row = mysqli_fetch_row($res);
+                                        setcookie("user_fName", $row[0], time()+(86400*30), "/");
+
+                                        setcookie("user_email", $email, time()+(86400*30), "/");
+                                        Header('Location: account_info.php');
                                     }
                                 }
                             }

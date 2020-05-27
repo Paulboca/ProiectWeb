@@ -10,11 +10,14 @@ $_SESSION['cpswd'] = $_POST['cpswd'];
 <!doctype html>
 <html lang="en">
 <head>
+    <link rel="icon" href="img/logo.png" type="image/ico"> <!-- favicon -->
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-    <link href="style_menu.css" rel="stylesheet">
-    <link href="style_signUp.css" rel="stylesheet">
+	<link href="style_menu.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" />
+	<link href="style_signUp.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" />
+	
+    <meta charset="utf-8">
 	<title>Sign Up</title>
 </head>
 <body>
