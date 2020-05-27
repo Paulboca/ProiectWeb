@@ -1,0 +1,44 @@
+
+.wrapper2 {
+  display: grid;
+  justify-content: space-evenly;
+  grid-template-columns: 400px 400px;
+  grid-gap: 10px;
+  background-color: #CCCCCC;
+  padding: 10px;
+}
+.box {
+	display: block;
+    width:400px;
+    height:650px;
+    border: 3px solid #999999;
+    padding: 10px 5px;
+    margin-top:30px
+}
+.prod_img{
+  display: block;
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 98%;
+  height: 80%;
+}
+.button1 {
+    padding: 8px 100px;
+}
+.button2 {
+    padding: 8px 86px;
+}
+.nume_prod{
+    text-align: center;
+    font-size: 24px;
+}
+.pret{
+    font-size: 30px;
+      position: relative;
+  left: 275px;
+  bottom:60px;
+}
+
+.f_input1{
+    display:none;
+}
