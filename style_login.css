@@ -2,6 +2,13 @@ html, body{
    /* position: static; */
    background-color: #E6E6EA;
 }
+#topline{
+   position: relative;
+   float: left;
+   width: 100%;
+   min-width: 30rem;
+   z-index: -1;
+}
 .textbox{
    position: absolute;
    top: 0%;
@@ -92,4 +99,14 @@ html, body{
 }
 *:focus{
    outline: none;
+}
+#php{
+   position: relative;
+   text-align: center;
+   color: red;
+   font-weight: bolder;
+   font-size: 1.5rem;
+   margin-top: -8rem;
+   margin-left: 5%;
+   width: 90%;
 }

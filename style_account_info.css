@@ -2,6 +2,13 @@ html, body{
     /* position: static; */
     background-color: #E6E6EA;
  }
+ #topline{
+    position: relative;
+    float: left;
+    width: 100%;
+    min-width: 30rem;
+    z-index: -1;
+ }
  .textbox{
     position: absolute;
     top: 0%;
@@ -14,24 +21,6 @@ html, body{
     height: 40rem;
     width: 30rem;
     background-color: white;
-    /* display: none; */
- }
- #leftbox{
-    display: none;
-    position: absolute;
-    top: 0%;
-    left: 40%;
-    /* right: 60%; */
- 
-    /* margin-left: 1%; */
-    /* margin-right: 15rem; */
-    padding: 15rem;
-    margin-top: 5rem;
-    margin-bottom: 5rem;
- 
-    height: 40rem;
-    width: 30rem;
-    background-color: white;   
  }
  *:focus{
     outline: none;

@@ -13,11 +13,14 @@
 		<?php
 		include ('menu.php')
         ?>
+
+    <div id="topline">
         <div class="textbox">
-        <p id="message">Succes!</p>
+            <p id="message">Succes!</p>
         </div>
-        <?php
-        Header('Refresh: 2; login.php');
-        ?>
+    </div>    
 </body>
 </html>
+<?php
+    Header('Refresh: 2; login.php');
+?>

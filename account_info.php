@@ -25,9 +25,12 @@
 		<?php
 		include ('menu.php')
         ?>
-        <div id="leftbox">sdsafafafaf</div>
+        
+    <div id="topline">
         <div class="textbox">
             <?= $_COOKIE["user_email"] ?> esti autentificat !! <?= $user_email?>
         </div>
+    </div>
+    
 </body>
 </html>
