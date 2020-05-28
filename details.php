@@ -18,11 +18,16 @@ if (mysqli_connect_errno()) {
     	<link rel="icon" href="img/favicon.png" type="image/ico"> <!-- favicon -->
 		<link href="style_menu.css" rel="stylesheet">
 		<link href="style_shop.css" rel="stylesheet">
+		<link href="style_footer.css" rel="stylesheet">
+		<link href="style_mybutton.css" rel="stylesheet">
 		<title>Fashion E-Shop</title>
 	</head>
 	<body>
 		<?php
         include ('menu.php')
+		?>
+		<?php
+		include ('footer.php')
 		?>
 		<div class="main">
 		<div class="wrapper2">
@@ -71,7 +76,17 @@ if (mysqli_connect_errno()) {
                 $mysql->close();
                 ?>
             </div>
+            
 		</div>
-
+	<div class="footer-bottom">
+		<div class="footer-content">
+			<h1 class= "logo-text"><span>Fashion E-Shop</span></h1>
+				<p> Welcome to our shop. Enjoy the sales! </p>
+				<p> Contact us for any problem. </p>
+				<p> Email: fasione-shop@gmail.com </p>
+				<p> Phone: 0754800865 </p>
+		</div>
+	</div>
+	<button id="myBtn"><a href="#top" style="color: black">Top</a></button>
 	</body>
 </html>
