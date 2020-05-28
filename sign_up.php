@@ -1,6 +1,11 @@
 <?php
 error_reporting(0);
 session_start();
+
+if (isset($_COOKIE['user_fName']) && !empty($_COOKIE['user_fName'])) {
+    Header('Location: account_info.php');
+}
+
 $_SESSION['fName'] = $_POST['fName'];
 $_SESSION['lName'] = $_POST['lName'];
 $_SESSION['email'] = $_POST['email'];
@@ -10,7 +15,7 @@ $_SESSION['cpswd'] = $_POST['cpswd'];
 <!doctype html>
 <html lang="en">
 <head>
-    <link rel="icon" href="img/logo.png" type="image/ico"> <!-- favicon -->
+    <link rel="icon" href="img/favicon.png" type="image/ico"> <!-- favicon -->
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
@@ -18,7 +23,7 @@ $_SESSION['cpswd'] = $_POST['cpswd'];
 	<link href="style_signUp.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" />
 	
     <meta charset="utf-8">
-	<title>Sign Up</title>
+	<title>Fashion E-Shop</title>
 </head>
 <body>
 		<?php
@@ -78,7 +83,7 @@ $_SESSION['cpswd'] = $_POST['cpswd'];
 						$passwd = $_POST['pswd'];
 						$cpasswd = $_POST['cpswd'];
 						
-						$link = mysqli_connect("localhost", "root", "", "fes");
+						$link = mysqli_connect("localhost", "root", "", "shop");
 
 						if($link === false){
 							die("ERROR: Could not connect. " . mysqli_connect_error());

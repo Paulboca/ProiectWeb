@@ -11,20 +11,21 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <link rel="icon" href="img/logo.png" type="image/ico"> <!-- favicon -->
+    <link rel="icon" href="img/favicon.png" type="image/ico"> <!-- favicon -->
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 	<link href="style_menu.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" />
-	<link href="style_login.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" />
+	<link href="style_account_info.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" />
 
     <meta charset="utf-8">
-    <title>Login</title>
+    <title>Fashion E-Shop</title>
 </head>
 <body>
 		<?php
 		include ('menu.php')
         ?>
+        <div id="leftbox">sdsafafafaf</div>
         <div class="textbox">
             <?= $_COOKIE["user_email"] ?> esti autentificat !! <?= $user_email?>
         </div>
