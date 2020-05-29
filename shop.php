@@ -23,36 +23,98 @@ if (mysqli_connect_errno()) {
 		<title>Fashion E-Shop</title>
 	</head>
 	<body>
-		<?php
-        include ('menu.php')
-		?>
-		<?php
-		include ('footer.php')
+        <?php
+		include ('menu.php')
 		?>
 		<div class="main">
-		<div class="wrapper2">
+        <div class="filter" id="myBtnContainer">
+          <input class="searchbox" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search" title="Type in a name">
+          <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+          <button class="btn" onclick="filterSelection('Femei')"> Femei</button>
+          <button class="btn" onclick="filterSelection('Barbati')"> Barbati</button>
+          <button class="btn" onclick="filterSelection('Copii')"> Copii</button>
+        </div>
+
+		<div class="wrapper2" id="wrapper2">
+
         
                 <?php
-                if (!($rez = $mysql->query ('select id,denumire,pret from products'))) {
+                if (!($rez = $mysql->query ('select id,denumire,pret,categorie from products'))) {
                     die ('A survenit o eroare la interogare');
                 } 
                 while ($inreg = $rez->fetch_assoc()) {
-                    echo('<div class="box"><div class="nume_prod">'.$inreg['denumire'].'</div><img class="prod_img" src="img/Products/'.$inreg['id'].'.png" alt=""><form action="details.php" method="post"><input class="f_input1" type="text" name="prd" id="prd" value="'.$inreg['id'].'" size="30" ></p><p><input class="button1" type="submit" value="Detalii"/></p></form><button class="button2">Add to cart</button><div class="pret">'.$inreg['pret'].' Lei</div></div>');
+                    echo('<li class="box '.$inreg['categorie'].'" id="box">
+                        <p class="nume_prod">'.$inreg['denumire'].'</p>
+                        <img class="prod_img" src="img/Products/'.$inreg['id'].'.png" alt="">
+                        <form action="details.php" method="post"><input class="f_input1" type="text" name="prd" id="prd" value="'.$inreg['id'].'" size="30" >
+                        </p>
+                        <p><input class="button1" type="submit" value="Detalii"/></p>
+                        </form>
+                        <button class="button2">Add to cart</button>
+                        <div class="pret">'.$inreg['pret'].' Lei</div>
+                        </li>
+                        ');
                 }
                 $mysql->close();
                 ?>
 
             </div>
 		</div>
-		<div class="footer-bottom">
-		<div class="footer-content">
-			<h1 class= "logo-text"><span>Fashion E-Shop</span></h1>
-				<p> Welcome to our shop. Enjoy the sales! </p>
-				<p> Contact us for any problem. </p>
-				<p> Email: fasione-shop@gmail.com </p>
-				<p> Phone: 0754800865 </p>
-		</div>
-	</div>
-	<button id="myBtn"><a href="#top" style="color: black">Top</a></button>
+		<?php
+		include ('footer.php')
+		?>
+
+<script>
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("wrapper2");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("p")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            addClass(li[i], "show");
+        } else {
+            removeClass(li[i], "show");
+        }
+    }
+}
+
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("box");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    removeClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) addClass(x[i], "show");
+  }
+}
+
+function addClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function removeClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+</script>
+
 	</body>
 </html>
