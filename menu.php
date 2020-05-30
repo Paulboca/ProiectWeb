@@ -3,7 +3,7 @@
 	session_start();
 
 	if (!isset($_COOKIE['user_fName']) || empty($_COOKIE['user_fName'])) {
-		$name = "My Account";
+		$name = "Welcome";
 	}else{
 		$name = "Hi, ". $_COOKIE['user_fName'];
 	}
@@ -37,6 +37,7 @@
 											}else{
 												echo "none";
 											} ?>;" >
+
 										<a href="login.php">Login</a> /
 										<a href="sign_up.php">Sign Up</a>
 									</div>
@@ -46,9 +47,10 @@
 											}else{
 												echo "block";
 											} ?>;" >
-										<a href="account_info.php">
+
+										<a href="account.php">
 											<div class="loggedElements">
-												Account Info 
+												My Account 
 											</div>
 										</a>
 										<div class="loggedElements">
@@ -61,8 +63,8 @@
 						<div id="text"> <?= $name ?> </div>
 					</form>
 					
-					<a href="#shoppingbag"><div id="bag"></div></a>
-					<a href="#favorites"><div id="fav"></div></a>
+					<a href="bag.php"><div id="bag"></div></a>
+					<a href="favorites.php"><div id="fav"></div></a>
 				</div>
 			</div>
 		</div>

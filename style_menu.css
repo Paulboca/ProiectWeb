@@ -175,10 +175,6 @@ html {
 #logged button:hover{
   background-color: #002d57;
 }
-.loggedElements{
-  /* border-width: 20px; */
-  /* border-color: black; */
-}
 .loggedElements:hover{
   background-color: #002d57;
 }

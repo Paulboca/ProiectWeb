@@ -2,6 +2,9 @@ html, body{
     /* position: static; */
     background-color: #E6E6EA;
  }
+ *:focus{
+    outline: none;
+ }
  #topline{
     position: relative;
     float: left;
@@ -21,7 +24,4 @@ html, body{
     height: 40rem;
     width: 30rem;
     background-color: white;
- }
- *:focus{
-    outline: none;
  }

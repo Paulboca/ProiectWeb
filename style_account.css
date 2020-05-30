@@ -1,0 +1,56 @@
+html, body{
+    /* position: static; */
+    background-color: #E6E6EA;
+ }
+ *:focus{
+    outline: none;
+ }
+ #topline{
+    position: relative;
+    float: left;
+    width: 100%;
+    min-width: 70rem;
+    z-index: -1;
+ }
+ #container{
+    position: absolute;
+    top: 0%;
+    left: 50%;
+ 
+    margin-left: -35rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+ 
+    min-height: 40rem;
+    width: 70rem;
+ }
+ #leftbox{
+    position: relative;
+    min-height: 40rem;
+    width: 19%;
+    background-color: white;
+    float: left;
+    /* border-radius: 10px; */
+ }
+ .lbItem button{
+     position: relative;
+     width: 100%;
+     border: 0px;
+     padding: 0px;
+     height: 3rem;
+     font-size: 1.5rem;
+     /* border-radius: 10px; */
+     background-color: #002d57;
+     color: white;
+ }
+ .lbItem button:hover{
+     background-color: #004585;
+ }
+ #textbox{
+    position: relative;
+    min-height: 40rem;
+    width: 80%;
+    /* background-color: white; */
+    float: right;
+    /* border-radius: 10px; */
+ }
