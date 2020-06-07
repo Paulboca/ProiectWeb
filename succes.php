@@ -22,5 +22,5 @@
 </body>
 </html>
 <?php
-    Header('Refresh: 2; login.php');
+    Header('Refresh: 1; login.php');
 ?>

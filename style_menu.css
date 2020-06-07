@@ -188,7 +188,7 @@ html {
   font-size: 1.2rem;
   margin-top: 0.7rem;
   margin-left: 0.5rem;
-  overflow-y: scroll;
+  overflow-y: hidden;
   overflow-wrap: break-word;
 }
 /* scroolbar properties */
@@ -256,7 +256,7 @@ html {
 }
 @media (max-width: 730px){
   .user{
-    min-width: 11rem;
+    min-width: 8rem;
     margin-left: 2rem;
   }
   #text{
@@ -329,7 +329,7 @@ html {
 }
 @media (min-width: 730px){
   .user{
-    min-width: 20rem;
+    min-width: 17rem;
   }
   #ulCover{
     width: 12rem;

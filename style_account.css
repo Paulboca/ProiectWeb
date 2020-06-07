@@ -2,55 +2,176 @@ html, body{
     /* position: static; */
     background-color: #E6E6EA;
  }
- *:focus{
+ /* *:focus{
     outline: none;
- }
- #topline{
+ } */
+ .topline{
     position: relative;
     float: left;
     width: 100%;
-    min-width: 70rem;
+    min-width: 84rem;
     z-index: -1;
  }
- #container{
+ .container{
     position: absolute;
-    top: 0%;
+    top: 0;
     left: 50%;
  
-    margin-left: -35rem;
+    margin-left: -42rem;
     margin-top: 5rem;
     margin-bottom: 5rem;
  
-    min-height: 40rem;
+    min-height: 30rem;
     width: 70rem;
  }
- #leftbox{
+ .leftbox{
     position: relative;
-    min-height: 40rem;
+    /* min-height: 12rem; */
     width: 19%;
-    background-color: white;
+    /* background-color: white; */
     float: left;
     /* border-radius: 10px; */
  }
  .lbItem button{
      position: relative;
      width: 100%;
-     border: 0px;
-     padding: 0px;
+     border: 0;
+     padding: 0;
      height: 3rem;
+     margin-bottom: 0.1rem;
      font-size: 1.5rem;
-     /* border-radius: 10px; */
+     border-radius: 10px;
      background-color: #002d57;
      color: white;
  }
  .lbItem button:hover{
      background-color: #004585;
  }
- #textbox{
+ .lbItem button:focus{
+    /* background-color: #ff5752; */
+    outline: none;
+ }
+ .rightbox{
     position: relative;
-    min-height: 40rem;
+    min-height: 30rem;
     width: 80%;
     /* background-color: white; */
     float: right;
     /* border-radius: 10px; */
  }
+ /* .rightbox body{
+    margin: 0;
+ } */
+ .textbox{
+   position: relative;
+   min-height: 30rem;
+   width: 100%;
+   background-color: white;
+   /* float: right; */
+   border-radius: 10px;
+}
+.elems{
+   position: absolute;
+   margin-top: 3rem;
+}
+.elem{
+   position: relative;
+   top: 10%;
+   /* align-content: center;
+   justify-content: center; */
+   float: right;
+   margin-right: 11rem;
+   /* margin-top: 10rem; */
+   font-size: 20px;
+}
+.mail{
+   float: right;
+   margin-right: 24rem;
+   margin-left: 4rem;
+   font-weight: bold;
+}
+#email{
+   background-image: url(img/mail.png);
+   background-repeat: no-repeat;
+   background-position: left;
+   background-position-x: 0.2rem;
+
+   border: 2px solid grey;
+   border-radius: 10px; 
+   height: 50px;
+   width: 30rem;
+   margin-left: 1rem;
+   font-family: 'Raleway', sans-serif;
+   font-size: 16px;
+   text-align: left;
+   text-indent: 2.5rem;
+   margin-top: 2.5rem;
+}
+#password{
+   background-image: url(img/password.png);
+   background-repeat: no-repeat;
+   background-position: left;
+   background-position-x: 0.2rem;
+
+   border: 2px solid grey;
+   border-radius: 10px; 
+   height: 50px;
+   width: 30rem;
+   margin-left: 1rem;
+   font-family: 'Raleway', sans-serif;
+   font-size: 16px;
+   text-align: left;
+   text-indent: 2.5rem;
+   margin-top: 2.5rem;
+}
+#name{
+   background-image: url(img/user.png);
+   background-repeat: no-repeat;
+   background-position: left;
+   background-position-x: 0.2rem;
+
+   border: 2px solid grey;
+   border-radius: 10px; 
+   height: 50px;
+   width: 30rem;
+   margin-left: 1rem;
+   font-family: 'Raleway', sans-serif;
+   font-size: 16px;
+   text-align: left;
+   text-indent: 2.5rem;
+   margin-top: 2.5rem;
+}
+.update_button{
+   position: absolute;
+   top: 25rem;
+   /* left: 51%; */
+   /* right: 150px; */
+   height: 50px;
+   width: 60%;
+   margin-left: 21%;
+   font-size: 16px;
+   font-weight: bold;
+   font-family: serif;
+   border-radius: 10px; 
+   /* background-color: #F7E29D; */
+}
+.update_button:hover{
+   background-color: rgb(175, 174, 174);
+}
+button:focus{
+   outline: none;
+}
+input:focus{
+   outline: none;
+}
+.php{
+   position: absolute;
+   text-align: center;
+   color: red;
+   font-weight: bolder;
+   font-size: 1.5rem;
+   margin-top: -1.5rem;
+   /* margin-left: 5%; */
+   width: 100%;
+   z-index: 2;
+}

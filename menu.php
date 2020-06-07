@@ -9,7 +9,7 @@
 	}
 ?>
 <!DOCTYPE html>
-<html>
+<html  lang="en">
 	<head>
 		<!-- <link rel="icon" href="img/logo.png" type="image/ico"> -->
 		<!-- <link href="style_menu.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" /> -->
@@ -64,7 +64,7 @@
 					</form>
 					
 					<a href="bag.php"><div id="bag"></div></a>
-					<a href="favorites.php"><div id="fav"></div></a>
+					<!-- <a href="favorites.php"><div id="fav"></div></a> -->
 				</div>
 			</div>
 		</div>
@@ -74,6 +74,7 @@
 	// if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		if( isset($_POST['log_out'])){
 			setcookie("user_fName", "", time()+(86400*30), "/");
+			setcookie("user_lName", "", time()+(86400*30), "/");
 			setcookie("user_email", "", time()+(86400*30), "/");
 
 			Header('Location: login.php');

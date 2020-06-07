@@ -1,20 +1,46 @@
 <?php
-error_reporting(0);
+// error_reporting(0);
 session_start();
 
 if (isset($_COOKIE['user_fName']) && !empty($_COOKIE['user_fName'])) {
-    Header('Location: account_info.php');
+    Header('Location: account.php');
 }
 
-$_SESSION['fName'] = $_POST['fName'];
-$_SESSION['lName'] = $_POST['lName'];
-$_SESSION['email'] = $_POST['email'];
-$_SESSION['pswd'] = $_POST['pswd'];
-$_SESSION['cpswd'] = $_POST['cpswd'];
+if (isset($_POST['fName']) && !empty($_POST['fName'])) {
+    $_SESSION['fName'] = $_POST['fName'];
+} else {
+    $_SESSION['fName'] = "";
+}
+
+if (isset($_POST['lName']) && !empty($_POST['lName'])) {
+    $_SESSION['lName'] = $_POST['lName'];
+} else {
+    $_SESSION['lName'] = "";
+}
+
+if (isset($_POST['email']) && !empty($_POST['email'])) {
+    $_SESSION['email'] = $_POST['email'];
+} else {
+    $_SESSION['email'] = "";
+}
+
+if (isset($_POST['pswd']) && !empty($_POST['pswd'])) {
+    $_SESSION['pswd'] = $_POST['pswd'];
+} else {
+    $_SESSION['pswd'] = "";
+}
+
+if (isset($_POST['cpswd']) && !empty($_POST['cpswd'])) {
+    $_SESSION['cpswd'] = $_POST['cpswd'];
+} else {
+    $_SESSION['cpswd'] = "";
+}
+
 ?>
 <!doctype html>
 <html lang="en">
 <head>
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
     <link rel="icon" href="img/favicon.png" type="image/ico"> <!-- favicon -->
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">

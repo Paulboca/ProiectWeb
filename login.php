@@ -1,17 +1,28 @@
 <?php
-error_reporting(0);
+// error_reporting(0);
 session_start();
 
 if (isset($_COOKIE['user_fName']) && !empty($_COOKIE['user_fName'])) {
-    Header('Location: account_info.php');
+    Header('Location: account.php');
 }
 
-$_SESSION['email'] = $_POST['email'];
-$_SESSION['pswd'] = $_POST['pswd'];
+if (isset($_POST['email']) && !empty($_POST['email'])) {
+    $_SESSION['email'] = $_POST['email'];
+} else {
+    $_SESSION['email'] = "";
+}
+
+if (isset($_POST['pswd']) && !empty($_POST['pswd'])) {
+    $_SESSION['pswd'] = $_POST['pswd'];
+} else {
+    $_SESSION['pswd'] = "";
+}
 ?>
 <!doctype html>
 <html lang="en">
 <head>
+    <meta name="Description" content="The login page for the FES site.">
+	<meta name="viewport" content="width=device-width">
     <link rel="icon" href="img/favicon.png" type="image/ico"> <!-- favicon -->
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">

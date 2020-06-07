@@ -3,42 +3,68 @@
         $email = $_POST['email'];
         $passwd = $_POST['pswd'];
 
-        $link = mysqli_connect("localhost", "root", "", "shop");
+        if(preg_match('/[\/\'"^£$%&*():;} {@#~?>!<>,|=_+¬-]/', $passwd) != 0 || 
+            preg_match('/[\/\'"^£$%&*():;} {#~?>!<>,|=_+¬-]/', $email) != 0){
+            echo "Not allowed characters in form fields !!";
+        }else{
+            $link1 = mysqli_connect("localhost", "root", "", "shop");
 
-        if($link === false){
-            die("ERROR: Could not connect. " . mysqli_connect_error());
-        }
+            if($link1 === false){
+                die("ERROR: Could not connect. " . mysqli_connect_error());
+            }
 
-        if ( empty($email) || empty($passwd) ) {
-            echo "Complete the entire form";
+            if ( empty($email) || empty($passwd) ) {
+                echo "Complete the entire form";
 
-            } else{
+                } else{
 
-                $sql = "SELECT count(email) from users where email = '" . $email . " ' ";
-                $res = mysqli_query($link, $sql);
-                $row = mysqli_fetch_row($res);
-                if( $row[0] != 1 ){
-                    echo "This e-mail is not registered";
-                
-                }else{
-                    $sql = "SELECT count(passwd) from users where email = '" . $email . "' and passwd = '". $passwd . " ' ";
-                    $res = mysqli_query($link, $sql);
-                    $row = mysqli_fetch_row($res);
+                    $sql = mysqli_prepare($link1, "SELECT count(email) from users where email = ? ");
+                    mysqli_stmt_bind_param($sql, "s", $email);
+                    mysqli_stmt_execute($sql);
+                    mysqli_stmt_bind_result ( $sql, $res);
+                    mysqli_stmt_fetch($sql);
+                    if( $res != 1 ){
+                        echo "This e-mail is not registered";
+                    
+                    }else{
+                        mysqli_close($link1);
+                        $link2 = mysqli_connect("localhost", "root", "", "shop");
+                        if($link2 === false){
+                            die("ERROR: Could not connect. " . mysqli_connect_error());
+                        }
 
-                    if( $row[0] != 1 ){
-                        echo "Wrong password";
-                        
-                    } else{
-                        $sql = "SELECT fName from users where email = '" . $email . " ' ";
-                        $res = mysqli_query($link, $sql);
-                        $row = mysqli_fetch_row($res);
-                        setcookie("user_fName", $row[0], time()+(86400*30), "/");
+                        $sql = mysqli_prepare($link2, "SELECT count(passwd) from users where email = ? and passwd = ? ");
+                        mysqli_stmt_bind_param($sql, "ss", $email, $passwd);
+                        mysqli_stmt_execute($sql);
+                        mysqli_stmt_bind_result ( $sql, $res);
+                        mysqli_stmt_fetch($sql);
 
-                        setcookie("user_email", $email, time()+(86400*30), "/");
-                        Header('Location: account_info.php');
+                        if( $res != 1 ){
+                            echo "Wrong password";
+                            
+                        } else{
+                            mysqli_close($link2);
+                            $link3 = mysqli_connect("localhost", "root", "", "shop");
+                            if($link3 === false){
+                                die("ERROR: Could not connect. " . mysqli_connect_error());
+                            }
+
+                            $sql = mysqli_prepare($link3, "SELECT fName,lName from users where email = ? ");
+                            mysqli_stmt_bind_param($sql, "s", $email);
+                            mysqli_stmt_execute($sql);
+                            mysqli_stmt_bind_result ( $sql, $res1, $res2);
+                            mysqli_stmt_fetch($sql);
+
+                            setcookie("user_fName", $res1, time()+(86400*30), "/");
+                            setcookie("user_lName", $res2, time()+(86400*30), "/");
+
+                            setcookie("user_email", $email, time()+(86400*30), "/");
+                            mysqli_close($link3);
+                            $_SESSION['load'] = 'loadData';
+                            Header('Location: account.php');
+                        }
                     }
                 }
-            }
-        mysqli_close($link);
+        }
     }
 ?>
