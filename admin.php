@@ -44,14 +44,21 @@ if (mysqli_connect_errno()) {
     <input type="text" name="fields">
     <input type="text" name="rest">
     <input type="submit"><br/>
+    <label>First field is for column names (Example : year,name,age). The second field is for the rest of the select</label>
+    <br>
+    <button type="submit" name="log_out">Log Out</button>
   </form>
-      <label>First field is for column names (Example : year,name,age). The second field is for the rest of the select</label>
     <form method="get" action="database.csv">
    <button type="submit">Download CSV</button>
    </form>
   <div class="results">
   
-  <?php 
+  <?php
+   if( isset($_POST['log_out'])){
+    $_SESSION['admin_email'] = "";
+
+    Header('Location: login_admin.php');
+  } 
   if( isset($_POST['fields'])){
     $fields = $_POST["fields"];
     if( isset($_POST['rest'])){

@@ -22,9 +22,32 @@
 		include ('menu.php')
         ?>
         
-    <div id="topline">
-        <div class="textbox">
-            Bag
+    <div class="topline">
+        <div class="container">
+            <div class="rightbox" id="rightbox">
+                <div class="produs">
+                    
+                </div>
+                <?php
+                    $link1 = mysqli_connect("localhost", "root", "", "shop");
+        
+                    if($link1 === false){
+                        die("ERROR: Could not connect. " . mysqli_connect_error());
+                    }
+
+                    $sql = mysqli_prepare($link1, "SELECT denumire, categorie, pret, cantitate from bag");
+                    // mysqli_stmt_bind_param($sql, "s", $email);
+                    mysqli_stmt_execute($sql);
+                    mysqli_stmt_bind_result ( $sql, $den, $cat, $pret, $cant);
+                    
+                    while( mysqli_stmt_fetch($sql)){
+                        if( empty($den) || empty($cat) || empty($pret) || empty($cant))
+                        echo "NULL";
+                        else
+                        echo "$den, $cat, $pret, $cant <br>";
+                    }
+                ?>
+            </div>
         </div>
     </div>
 </body>
