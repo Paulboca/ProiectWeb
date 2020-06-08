@@ -22,8 +22,9 @@
 		<p>We will deliver your purchase within 2-3 days after receiving your order confirmation.</p>
 
 	<img class = "poza3" src="img/poza3.jpg" alt="News"/>
-	<img class = "sales" src="img/sales.jpg" alt="News"/>
+	<img class = "sales" src="img/sales_clothes.jpg" alt="News"/>
 	<p> *This week we have discount on four clothing. Be fast!! Within the available stocks. </p>
+	<p> **The discount is applied when adding the product to the cart. </p>
 
 	</div>
 		<?php
