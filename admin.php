@@ -44,19 +44,14 @@ if (mysqli_connect_errno()) {
     <input type="text" name="fields">
     <input type="text" name="rest">
     <input type="submit"><br/>
-    <label>First field is for column names (Example : year,name,age). The second field is for the rest of the select</label>
-    <br>
-    <button type="submit" name="log_out">Log Out</button>
   </form>
-
+      <label>First field is for column names (Example : year,name,age). The second field is for the rest of the select</label>
+    <form method="get" action="database.csv">
+   <button type="submit">Download CSV</button>
+   </form>
   <div class="results">
   
   <?php 
-  if( isset($_POST['log_out'])){
-    $_SESSION['admin_email'] = "";
-  
-    Header('Location: login_admin.php');
-  }
   if( isset($_POST['fields'])){
     $fields = $_POST["fields"];
     if( isset($_POST['rest'])){
@@ -65,6 +60,7 @@ if (mysqli_connect_errno()) {
     if (!($rez = $mysql->query ('select '.$fields.' '.$rest))) {
                     die ('Error on query');
     } 
+    else {
     $columns = explode (",", $fields);
     while ($inreg = $rez->fetch_assoc()) {
         foreach ($columns as $item) {
@@ -72,6 +68,21 @@ if (mysqli_connect_errno()) {
         }
         
         echo "<br>";
+    }
+    }
+    $fp = fopen('database.csv', 'w+');
+    fputcsv($fp, $columns);
+    if (!($rez = $mysql->query ('select '.$fields.' '.$rest))) {
+                    die ('Error on query');
+    }
+    else {
+        while ($inreg = $rez->fetch_assoc()) {
+            fputcsv($fp, $inreg);
+        }
+    fclose($fp);
+
+    //header("Content-type: text/x-csv");
+    //header("Content-Disposition: attachment; filename=".$csv_filename."");
     }
     } 
 }
