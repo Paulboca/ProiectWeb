@@ -10,6 +10,8 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <meta name="Description" content="The shopping bag page for the FES site.">
+	<meta name="viewport" content="width=device-width">
     <link rel="icon" href="img/favicon.png" type="image/ico"> <!-- favicon -->
 	<link href="style_menu.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" />
 	<link href="style_bag.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" />
@@ -24,10 +26,7 @@
         
     <div class="topline">
         <div class="container">
-            <div class="rightbox" id="rightbox">
-                <div class="produs">
-                    
-                </div>
+            <div class="php">
                 <?php
                     $link1 = mysqli_connect("localhost", "root", "", "shop");
         
@@ -35,17 +34,66 @@
                         die("ERROR: Could not connect. " . mysqli_connect_error());
                     }
 
-                    $sql = mysqli_prepare($link1, "SELECT denumire, categorie, pret, cantitate from bag");
+                    $sql = mysqli_prepare($link1, "SELECT id_produs, denumire, categorie, pret, cantitate from bag");
                     // mysqli_stmt_bind_param($sql, "s", $email);
                     mysqli_stmt_execute($sql);
-                    mysqli_stmt_bind_result ( $sql, $den, $cat, $pret, $cant);
+                    mysqli_stmt_bind_result ( $sql, $id, $den, $cat, $pret, $cant);
                     
+                    $sum = 0;
                     while( mysqli_stmt_fetch($sql)){
-                        if( empty($den) || empty($cat) || empty($pret) || empty($cant))
-                        echo "NULL";
+                        if( empty($id) && empty($den) && empty($cat) && empty($pret) && empty($cant))
+                            echo "Cosul este gol";
                         else
-                        echo "$den, $cat, $pret, $cant <br>";
+                            $sum = $sum + ($cant * $pret);
+                            echo '
+                            <div class="produs">
+                            <img class="image" alt="imagine produs" src="img/Products/'.$id.'.png">
+                           <div class="lbox">
+                               <div class="ltop">
+                                   '.$den.'
+                               </div>
+                               <div class="lbottom">
+                                    Categorie: '.$cat.'
+                               </div>
+                           </div>
+                           <div class="rbox">
+                               <div class="rlbox">
+                                    <div class="rtop">
+                                        Cantitate
+                                    </div>
+                                    <form method="post">
+                                        <input type="number" name="cant" value='.$cant.'>
+                                        
+                                        <button class="refresh" name="refresh"></button>
+                                    </form>
+                               </div>
+                               <div class="rcbox">
+                                    <div class="rtop">
+                                        Pret buc.
+                                    </div>
+                                    '.$pret.'
+                               </div>
+                               <div class="rrbox">
+                                    <div class="rtop">
+                                        Pret total produs
+                                    </div>
+                                    '.$pret * $cant.'
+                               </div>
+                           </div>
+                        </div>
+                            ';
                     }
+                    echo '
+                    <div class="total">
+                    Total: '.$sum.'
+                    </div>
+                    ';
+                    if( isset($_POST['refresh'])){
+                        $sql1 = mysqli_prepare($link1, "UPDATE bag SET cantitate = ? WHERE id_produs = ? ");
+                        mysqli_stmt_bind_param($sql1, "dd", $_POST['cant'], $id);
+                        mysqli_stmt_execute($sql1);
+                    }
+                    mysqli_close($link1);
                 ?>
             </div>
         </div>
