@@ -26,9 +26,7 @@ if (mysqli_connect_errno()) {
 		<?php
         include ('menu.php')
 		?>
-		<?php
-		include ('footer.php')
-		?>
+	
 		<div class="main">
 		<div class="wrapper2">
         
