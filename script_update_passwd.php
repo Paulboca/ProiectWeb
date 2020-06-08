@@ -19,7 +19,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
             
             if ( empty($apasswd) || empty($passwd) || empty($cpasswd)) {
-            echo "Complete the entire form";
+                if(isset($_POST['email']) || isset($_POST['fName'])){
+                    //
+                }else
+                    echo "Complete the entire form";
             }else{
                 $sql = mysqli_prepare($link1, "SELECT passwd from users WHERE email = ? ");
                 mysqli_stmt_bind_param($sql, "s",$email );

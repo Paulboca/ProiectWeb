@@ -1,8 +1,6 @@
 
 html {
   background-color: #E6E6EA;
-  /* width: 100%; */
-
 }
 .parent{
 	position: fixed;
@@ -10,12 +8,8 @@ html {
 	left: 0;
 	margin:auto;
   width: 100%;
-  /* min-width: 950px; */
   z-index: 1;
-  /* background-color: #015cb1; */
   background-color: #00213f;
-
-  /* background-color: #111111; */
 }
 .navbar {
 	/* display:flex; */
@@ -25,9 +19,6 @@ html {
   height: 65px;
   margin-left: 10%;
   min-width: 22.5rem;
-  /* display: inline-block; */
-  /* margin-right: 20%; */
-  /* overflow: scroll; */
 }
 .logo{
   border-radius: 100px;
@@ -45,10 +36,9 @@ html {
 
   background-color: white;
 }
-#open-menu{
+.open-menu{
   position: relative;
   float: left;
-  /* margin-left: 2rem; */
   margin-top: 7px;
   height: 51px;
   width: 51px;
@@ -59,27 +49,18 @@ html {
   background-position: left;
   background-size: 90px;
   background-position-x: -1.2rem;
-  /* background-position-y: 2px; */
-
-  /* background-color: black; */
 }
-#open-menu:hover{
+.open-menu:hover{
   background-color: #00315c;
 }
 .linkMenu:hover {
-  /* background: #999999; */
   background: #00315c;
-  /* color: black; */
 }
 .user{
   justify-content: center;
   align-items: center;
   position: relative;
   max-height: 65px;
-  /* display: flex; */
-  /* display: inline; */
-  /* width: 35%; */
-  /* height: 3rem; */
   float: right;  
   margin-right: 1%;
 }
@@ -88,7 +69,6 @@ html {
   background-repeat: no-repeat;
   background-position: left;
   background-size: 51px;
-  /* background-position-x: 0.25rem; */
   background-position-y: 0.1rem;
 
   float: left;
@@ -98,28 +78,24 @@ html {
   border-radius: 100px; 
   background-color: white;
 }
-#ulCover{
+.ulCover{
   position: absolute;
-  top: 0%;
+  top: 0;
   height: 65px;
   margin-left: -1rem;
-  /* background-color: red; */
   display: none;
 }
-#ulCover:hover{
+.ulCover:hover{
   display: block;
 }
-#ulCover:hover .dropDownMenu{
+.ulCover:hover .dropDownMenu{
   display: block;
 }
 .dropDownMenu{
   position: absolute;
-  /* display: block; */
-  top: 0%;
+  top: 0;
   display: none;
   margin-top: 65px;
-  /* margin-left: -2rem; */
-  /* height: 100px; */
   max-width: 12rem;
   /* background-color: #44a4ec; */
   background-color: #00213f;
@@ -133,56 +109,50 @@ html {
   height: 49px;
   width: 49px;
 }
-.logoUser:hover #ulCover{
+.logoUser:hover .ulCover{
   display: block;
 }
-#log{
+.log{
   font-size: 1.4rem;
   text-align: center;
   /* color: #9ec4e0; */
   color: white;
 
 }
-#log a{
+.log a{
   text-decoration: none;
-  /* color: #9ec4e0; */
   color: white;
   font-family: sans-serif;
 }
-#log a:hover{
+.log a:hover{
   background-color: #002d57;
 }
-#logged{
-  /* height: 2rem; */
+.logged{
   font-size: 1.2rem;
   text-align: center;
 }
-#logged a{
+.logged a{
   text-decoration: none;
-  /* color: #9ec4e0; */
   color: white;
   font-family: sans-serif;
 }
-#logged button{
+.logged button{
   width: 100%;
   height: 100%;
   background-color: #00213f;
-  /* color: #9ec4e0; */
   color: white;
   border: none;
   font-size: 1.2rem;
 }
-#logged button:hover{
+.logged button:hover{
   background-color: #002d57;
 }
 .loggedElements:hover{
   background-color: #002d57;
 }
-#text{
-  /* position: absolute; */
+.text{
   color: white;
   float: left;
-  /* overflow: hidden; */
   max-width: 8.5rem;
   max-height: 2.7rem;
   font-size: 1.2rem;
@@ -191,54 +161,12 @@ html {
   overflow-y: hidden;
   overflow-wrap: break-word;
 }
-/* scroolbar properties */
-        /* width */
-        ::-webkit-scrollbar {
-          width: 5px;
-        }
-        /* Track */
-        /* ::-webkit-scrollbar-track { */
-          /* background: #f1f1f1;  */
-        /* } */
-        /* Handle */
-        ::-webkit-scrollbar-thumb {
-          background: #888; 
-        }
-        /* Handle on hover */
-        ::-webkit-scrollbar-thumb:hover {
-          background: #555; 
-        }
-/* until here */
-#fav{
-  background-image: url(img/fav.png);
-  background-repeat: no-repeat;
-  background-position: left;
-  background-position-x: 0.04rem;
-  background-position-y: 0.2rem;
-  /* background-color: white; */
-  background-size: 43px;
-
-  height: 45px;
-  width: 45px;
-  border-radius: 100px; 
-  float: right;
-  margin-top: 10px;
-  margin-left: 1rem;
-  /* font-size: 24px;
-  font-weight: bold;
-  text-decoration: none; */
-}
-#fav:hover{
-  /* background-color:rgba(161, 6, 6, 0.692); */
-  background-size: 41px;
-}
-#bag{
+.bag{
   background-image: url(img/cart.png);
   background-repeat: no-repeat;
   background-position: left;
   background-position-x: 0.2rem;
   background-position-y: 0.3rem;
-  /* background-color: white; */
   background-size: 40px;
 
   height: 48px;
@@ -248,54 +176,49 @@ html {
   float: right;
   margin-left: 1rem;
 }
-#bag:hover{
-  /* background-color: rgba(230, 230, 234, 0.801); */
+.bag:hover{
   background-size: 38px;
-  /* height: 43px; */
-  /* width: 43px; */
 }
 @media (max-width: 730px){
   .user{
     min-width: 8rem;
     margin-left: 2rem;
   }
-  #text{
+  .text{
     display: none;
   }
   .menu{
     display: none;
   }
-  #open-menu{
+  .open-menu{
     position: absolute;
     display: block;
   }
-  #ulCover{
+  .ulCover{
     width: 6rem;
   }
-  #log{
+  .log{
     width: 6rem;
   }
-  #logged{
+  .logged{
     width: 6rem;
   }
-  #log{
+  .log{
     height: 3.5rem;
   }
   .loggedElements{
     height: 3rem;
   }
-  #menus{
-    /* position: absolute; */
-    top: 0%;
+  .menus{
+    top: 0;
     width: 51px;
     height: 65px;
 
     position: relative;
     float: left;
     margin-left: 2rem;
-    /* margin-top: 7px; */
   }
-  #menus:hover .menu{
+  .menus:hover .menu{
     display: block;
     position: absolute;
     top: 65px;
@@ -303,17 +226,11 @@ html {
     align-items: center;
     justify-content: center;
     margin-left: -1.5rem;
-    /* margin-right: 15%; */
-    /* min-width: 15rem; */
     width: 6rem;
-    /* height: 10rem; */
     background-color: #00213f;
-
-    /* float: left; */
   }
-  #menus:hover .linkMenu {
+  .menus:hover .linkMenu {
     float: left;
-    /* margin-left: 2rem; */
     height: 3.5rem;
     width: 100%;
     color: white;
@@ -323,7 +240,7 @@ html {
     text-align: center;
   }
   .linkMenu p{
-    margin: 0rem;
+    margin: 0;
     margin-top: 1rem;
   }
 }
@@ -331,16 +248,16 @@ html {
   .user{
     min-width: 17rem;
   }
-  #ulCover{
+  .ulCover{
     width: 12rem;
   }
-  #log{
+  .log{
     width: 12rem;
   }
-  #logged{
+  .logged{
     width: 12rem;
   }
-  #log{
+  .log{
     height: 2rem;
   }
   .loggedElements{
@@ -364,7 +281,7 @@ html {
     text-align: center;
   }
   .linkMenu p{
-    margin: 0rem;
+    margin: 0;
     margin-top: 1rem;
   }
 }

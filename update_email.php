@@ -22,7 +22,7 @@
                 <div class="elem">
                     <label>
                     New E-mail:
-                        <input type="email" id="email" name="email" 
+                        <input type="email" class="email" name="email" 
                             maxlength="100" placeholder="New E-mail"
                              required>
                     </label>

@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <meta name="Description" content="The succes page for the FES site.">
+	<meta name="viewport" content="width=device-width">
     <link rel="icon" href="img/favicon.png" type="image/ico"> <!-- favicon -->
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital@1&display=swap" rel="stylesheet">
 	<link href="style_menu.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" />
@@ -14,9 +16,9 @@
 		include ('menu.php')
         ?>
 
-    <div id="topline">
+    <div class="topline">
         <div class="textbox">
-            <p id="message">Succes!</p>
+            <p class="message">Succes!</p>
         </div>
     </div>    
 </body>

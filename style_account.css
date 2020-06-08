@@ -90,7 +90,7 @@ html, body{
    margin-left: 4rem;
    font-weight: bold;
 }
-#email{
+.email{
    background-image: url(img/mail.png);
    background-repeat: no-repeat;
    background-position: left;
@@ -107,7 +107,7 @@ html, body{
    text-indent: 2.5rem;
    margin-top: 2.5rem;
 }
-#password{
+.password{
    background-image: url(img/password.png);
    background-repeat: no-repeat;
    background-position: left;
@@ -124,7 +124,7 @@ html, body{
    text-indent: 2.5rem;
    margin-top: 2.5rem;
 }
-#name{
+.name{
    background-image: url(img/user.png);
    background-repeat: no-repeat;
    background-position: left;

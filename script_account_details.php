@@ -17,7 +17,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
             
             if ( empty($fName) || empty($lName)) {
-            echo "Complete the entire form";
+                if(isset($_POST['email']) || isset($_POST['passwd'])){
+                    //
+                }else
+                    echo "Complete the entire form";
             }else{            
                 $sql = mysqli_prepare($link1, "UPDATE users SET fName = ?, lName = ? WHERE email = ? ");
                 mysqli_stmt_bind_param($sql, "sss", $fName, $lName, $email);

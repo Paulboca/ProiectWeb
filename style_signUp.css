@@ -1,4 +1,4 @@
-#topline{
+.topline{
    position: relative;
    float: left;
    width: 100%;
@@ -7,7 +7,7 @@
 }
 .textbox{
    position: absolute;
-   top: 0%;
+   top: 0;
    left: 50%;
 
    margin-left: -15rem;
@@ -25,9 +25,9 @@
    width: 90%;
    font-size: 20px;
 }
-#register_logo{
-   margin-top: 0rem;
-   margin-bottom: 0rem;
+.register_logo{
+   margin-top: 0;
+   margin-bottom: 0;
    text-align: center;
    font-size: 70px;
    font-weight: bold;
@@ -84,15 +84,12 @@
 #create_account{
    position: absolute;
    top: 3rem;
-   /* left: 51%; */
-   /* right: 150px; */
    height: 50px;
    width: 100%;
    font-size: 16px;
    font-weight: bold;
    font-family: serif;
    border-radius: 10px; 
-   /* background-color: #F7E29D; */
 }
 #create_account:hover{
    background-color: rgb(175, 174, 174);
@@ -109,7 +106,7 @@
 *:focus{
     outline: none;
 }
-#php{
+.php{
    position: relative;
    text-align: center;
    color: red;
@@ -118,4 +115,9 @@
    margin-top: -19rem;
    margin-left: 5%;
    width: 90%;
+}
+.ll{
+   margin-top: -0.2rem;
+   position: absolute;
+   font-weight: bold;
 }

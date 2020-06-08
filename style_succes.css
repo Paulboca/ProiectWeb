@@ -1,4 +1,4 @@
-#topline{
+.topline{
    position: relative;
    float: left;
    width: 100%;
@@ -16,12 +16,12 @@
  
     width: 30rem;
  }
- #message{
-    margin-top: 0rem;
-    margin-bottom: 0rem;
+ .message{
+    margin-top: 0;
+    margin-bottom: 0;
     text-align: center;
     font-size: 2.17rem;
     font-weight: bold;
     font-family: 'DM Mono', monospace;
-    color: rgb(46, 179, 85);
+    color: rgb(27, 151, 64);
  }

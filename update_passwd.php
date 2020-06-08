@@ -14,7 +14,7 @@
                 <div class="elem">
                     <label>
                     Current Password:
-                    <input type="password" id="password" name="apasswd" 
+                    <input type="password" class="password" name="apasswd" 
                             maxlength="100" placeholder="Current Password" 
                                  required>
                     </label>
@@ -22,7 +22,7 @@
                 <div class="elem">
                     <label>
                     New Password:
-                    <input type="password" id="password" name="passwd" 
+                    <input type="password" class="password" name="passwd" 
                             maxlength="100" placeholder="New Password" 
                              required>
                     </label>
@@ -30,7 +30,7 @@
                 <div class="elem">
                     <label>
                     Confirm Password:
-                        <input type="password" id="password" name="cpasswd" 
+                        <input type="password" class="password" name="cpasswd" 
                             maxlength="100" placeholder="Confirm Password"
                             required>
                     </label>

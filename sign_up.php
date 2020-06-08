@@ -40,6 +40,8 @@ if (isset($_POST['cpswd']) && !empty($_POST['cpswd'])) {
 <!doctype html>
 <html lang="en">
 <head>
+	<meta name="Description" content="The sign up page for the FES site.">
+	<meta name="viewport" content="width=device-width">
 	<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
     <link rel="icon" href="img/favicon.png" type="image/ico"> <!-- favicon -->
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&display=swap" rel="stylesheet">
@@ -57,37 +59,42 @@ if (isset($_POST['cpswd']) && !empty($_POST['cpswd'])) {
 		?>
 
 	<form method="POST">
-	    <div id="topline">
+	    <div class="topline">
 			<div class="textbox">
 				<div class="signUp">
-					<p id="register_logo">Register</p>
+					<p class="register_logo">Register</p>
 				</div> <br>
 				
 				<div class="signUp">
+					<label class="ll" for="fname">First Name</label>
 					<input type="text" id="fname" name="fName" 
 						maxlength="100" placeholder="First Name" 
 							value="<?= $_SESSION['fName'];?>" required>
 				</div>
 				
 				<div class="signUp">
+					<label class="ll" for="lname">Last Name</label>
 					<input type="text" id="lname" name="lName" 
 						maxlength="100" placeholder="Last Name"
 						value="<?= $_SESSION['lName'];?>" required>
 				</div>
 				
 				<div class="signUp">
+					<label class="ll" for="email">E-mail</label>
 					<input type="email" id="email" name="email" 
 						maxlength="100" placeholder="Email"
 						value="<?= $_SESSION['email'];?>" required>
 				</div>
 
 				<div class="signUp">
+					<label class="ll" for="password">Password</label>
 					<input type="password" id="password" name="pswd" 
 						placeholder="Password" maxlength="100"
 						value="<?= $_SESSION['pswd'];?>" required>
 				</div>
 
 				<div class="signUp">
+					<label class="ll" for="cpassword">Confirm Password</label>
 					<input type="password" id="cpassword" name="cpswd" 
 						placeholder="Confirm Password" maxlength="100"
 						value="<?= $_SESSION['cpswd'];?>" required>
@@ -103,7 +110,7 @@ if (isset($_POST['cpswd']) && !empty($_POST['cpswd'])) {
 					<a class="signUp" id="login" href="login.php">LOGIN</a>
 				</div>
 
-                <div id="php">
+                <div class="php">
 					<?php include ('script_sign_up.php'); ?>
                 </div>
 			</div>

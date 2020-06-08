@@ -13,7 +13,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta name="Description" content="The login page for the FES site.">
+    <meta name="Description" content="The my account page for the FES site.">
 	<meta name="viewport" content="width=device-width">
     <link rel="icon" href="img/favicon.png" type="image/ico"> <!-- favicon -->
 	<link href="style_menu.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" />

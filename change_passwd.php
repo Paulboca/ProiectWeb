@@ -28,6 +28,8 @@ if (isset($_POST['cpswd']) && !empty($_POST['cpswd'])) {
 <!doctype html>
 <html lang="en">
 <head>
+	<meta name="Description" content="The change password page for the FES site.">
+	<meta name="viewport" content="width=device-width">
     <link rel="icon" href="img/favicon.png" type="image/ico"> <!-- favicon -->
 	<link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
@@ -44,28 +46,31 @@ if (isset($_POST['cpswd']) && !empty($_POST['cpswd'])) {
 		include ('menu.php')
 		?>
 	<form method="POST">
-	    <div id="topline">
+	    <div class="topline">
 			<div class="textbox">
 				<div class="changePasswd">
-					<p id="change_passwd_logo1">Change</p>
+					<p class="change_passwd_logo1">Change</p>
 				</div>
 				<div class="changePasswd">
-					<p id="change_passwd_logo2">Password</p>
+					<p class="change_passwd_logo2">Password</p>
 				</div> <br>
 				
 				<div class="changePasswd">
+					<label class="ll" for="email">E-mail</label>
 					<input type="email" id="email" name="email" 
 						maxlength="100" placeholder="Email"
 						value="<?= $_SESSION['email'];?>" required>
 				</div>
 
 				<div class="changePasswd">
+					<label class="ll" for="password">Password</label>
 					<input type="password" id="password" name="pswd" 
 						placeholder="New Password" maxlength="100"
 						value="<?= $_SESSION['pswd'];?>" required>        
 				</div>
 
 				<div class="changePasswd">
+                    <label class="ll" for="cpassword">Confirm Password</label>
 					<input type="password" id="cpassword" name="cpswd" 
 						placeholder="Confirm Password" maxlength="100"
 						value="<?= $_SESSION['cpswd'];?>" required>        
@@ -80,7 +85,7 @@ if (isset($_POST['cpswd']) && !empty($_POST['cpswd'])) {
 					<a class="changePasswd" id="sign_up" href="sign_up.php">SIGN UP</a>
 				</div>
 				
-                <div id="php">
+                <div class="php">
 					<?php include ('script_change_passwd.php'); ?>
                 </div>
 			</div>

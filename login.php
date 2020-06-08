@@ -39,19 +39,21 @@ if (isset($_POST['pswd']) && !empty($_POST['pswd'])) {
         ?>
       
     <form method="POST" >
-        <div id="topline">
+        <div class="topline">
             <div class="textbox">
                 <div class="login">
-                    <p id="login_logo">Login</p>
+                    <p class="login_logo">Login</p>
                 </div>
                 
                 <div class="login"> <br/>
+                    <label class="ll" for="email">E-mail</label>
                     <input type="email" id="email" name="email" 
                         maxlength="100" placeholder="Email"
                         value="<?= $_SESSION['email'];?>" required>
                 </div>
 
                 <div class="login"> <br/>
+                    <label class="ll" for="password">Password</label>
                     <input type="password" id="password" name="pswd" 
                         placeholder="Password" maxlength="100"
                         value="<?= $_SESSION['pswd'];?>" required>        
@@ -68,7 +70,7 @@ if (isset($_POST['pswd']) && !empty($_POST['pswd'])) {
 
                 </div>
                
-                <div id="php">
+                <div class="php">
                     <?php include ('script_login.php'); ?>
                 </div>
             </div>

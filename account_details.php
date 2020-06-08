@@ -14,7 +14,7 @@
                 <div class="elem">
                     <label>
                     First Name:
-                    <input type="text" id="name" name="fName" 
+                    <input type="text" class="name" name="fName" 
                             maxlength="100" placeholder="First Name" 
                                 value="<?= $_COOKIE['user_fName'];?>" required>
                     </label>
@@ -22,7 +22,7 @@
                 <div class="elem">
                     <label>
                     Last Name:
-                        <input type="text" id="name" name="lName" 
+                        <input type="text" class="name" name="lName" 
                             maxlength="100" placeholder="Last Name"
                             value="<?= $_COOKIE['user_lName'];?>" required>
                     </label>
