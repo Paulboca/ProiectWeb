@@ -9,7 +9,7 @@ $mysql = new mysqli (
 
 // verificam daca am reusit
 if (mysqli_connect_errno()) {
-	die ('Conexiunea a esuat...');
+	die ('ERROR: Could not connect.');
 }
 ?>
 <html>
@@ -50,12 +50,14 @@ if (mysqli_connect_errno()) {
                         </p>
                         <p><input class="button1" type="submit" value="Detalii"/></p>
                         </form>
-                        <button class="button2">Add to cart</button>
+                        <form action="shop.php" method="post"><input class="f_input1" type="text" name="prd" id="prd" value="'.$inreg['id'].'" size="30" >
+                        </p>
+                        <p><input class="button2" type="submit" value="Add to cart"/></p>
+                        </form>
                         <div class="pret">'.$inreg['pret'].' Lei</div>
                         </li>
                         ');
                 }
-                $mysql->close();
                 ?>
 
             </div>
@@ -64,6 +66,24 @@ if (mysqli_connect_errno()) {
 		include ('footer.php')
 		?>
 
+
+<?php
+    if( isset($_POST['prd'])){
+    $prd = $_POST["prd"];
+    $instructiune='select id,denumire,categorie,pret from products where id='.$prd.';';
+    
+    if (!($rez = $mysql->query ($instructiune))) {
+        die ('A survenit o eroare la interogare');
+    } 
+    while ($inreg = $rez->fetch_assoc()) {
+        if( isset($user_id)){$instructiune='insert into bag values ('$user_id,'.$inreg['id'].',"'.$inreg['denumire'].'","'.$inreg['categorie'].'",'.$inreg['pret'].',1)';}
+        else $instructiune='insert into bag values (0,'.$inreg['id'].',"'.$inreg['denumire'].'","'.$inreg['categorie'].'",'.$inreg['pret'].',1)';
+    }
+    if (!($rez = $mysql->query ($instructiune))) {
+                    die ('Error on query');
+    }  
+    }
+?>
 <script>
 function myFunction() {
     var input, filter, ul, li, a, i, txtValue;
