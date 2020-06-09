@@ -5,7 +5,16 @@
     //     exit();
     // }
 
-    // $user_email = $_COOKIE['user_email'];
+    $link1 = mysqli_connect("localhost", "root", "", "shop");    
+    if($link1 === false){
+        die("ERROR: Could not connect. " . mysqli_connect_error());
+    }
+    
+    if( isset($_POST['refresh'])){
+        $sql1 = mysqli_prepare($link1, "UPDATE bag SET cantitate = ? WHERE id_produs = ? ");
+        mysqli_stmt_bind_param($sql1, "dd", $_POST['cant'], $_POST['id']);
+        mysqli_stmt_execute($sql1);
+    }
 ?>
 <!doctype html>
 <html lang="en">
@@ -14,7 +23,8 @@
 	<meta name="viewport" content="width=device-width">
     <link rel="icon" href="img/favicon.png" type="image/ico"> <!-- favicon -->
 	<link href="style_menu.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" />
-	<link href="style_bag.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" />
+    <link href="style_bag.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 
     <meta charset="utf-8">
     <title>Fashion E-Shop</title>
@@ -26,16 +36,13 @@
         
     <div class="topline">
         <div class="container">
+             <div class="shop_logo">
+                Shopping Bag
+            </div>
             <div class="php">
                 <?php
-                    $link1 = mysqli_connect("localhost", "root", "", "shop");
-        
-                    if($link1 === false){
-                        die("ERROR: Could not connect. " . mysqli_connect_error());
-                    }
-
-                    $sql = mysqli_prepare($link1, "SELECT id_produs, denumire, categorie, pret, cantitate from bag");
-                    // mysqli_stmt_bind_param($sql, "s", $email);
+                    $sql = mysqli_prepare($link1, "SELECT id_produs, denumire, categorie, pret, cantitate from bag where id_client = ?");
+                    mysqli_stmt_bind_param($sql, "d", $_COOKIE['device_id']);
                     mysqli_stmt_execute($sql);
                     mysqli_stmt_bind_result ( $sql, $id, $den, $cat, $pret, $cant);
                     
@@ -63,7 +70,7 @@
                                     </div>
                                     <form method="post">
                                         <input type="number" name="cant" value='.$cant.'>
-                                        
+                                        <input class="hide" type="number" name="id" value='.$id.'>
                                         <button class="refresh" name="refresh"></button>
                                     </form>
                                </div>
@@ -87,12 +94,10 @@
                     <div class="total">
                     Total: '.$sum.'
                     </div>
+                    <div class="checkout">
+                        <a href="checkout.php">CHECKOUT</a>
+                    </div>
                     ';
-                    if( isset($_POST['refresh'])){
-                        $sql1 = mysqli_prepare($link1, "UPDATE bag SET cantitate = ? WHERE id_produs = ? ");
-                        mysqli_stmt_bind_param($sql1, "dd", $_POST['cant'], $id);
-                        mysqli_stmt_execute($sql1);
-                    }
                     mysqli_close($link1);
                 ?>
             </div>
