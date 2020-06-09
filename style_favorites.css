@@ -1,0 +1,27 @@
+html, body{
+    /* position: static; */
+    background-color: #E6E6EA;
+ }
+ *:focus{
+    outline: none;
+ }
+ #topline{
+    position: relative;
+    float: left;
+    width: 100%;
+    min-width: 30rem;
+    z-index: -1;
+ }
+ .textbox{
+    position: absolute;
+    top: 0%;
+    left: 50%;
+ 
+    margin-left: -15rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+ 
+    height: 40rem;
+    width: 30rem;
+    background-color: white;
+ }

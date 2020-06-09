@@ -5,7 +5,7 @@ html, body{
    position: relative;
    float: left;
    width: 100%;
-   min-width: 58rem;
+   min-width: 84rem;
    z-index: -1;
 }
 .container{
@@ -21,14 +21,6 @@ html, body{
    width: 58rem;
    border-radius: 10px;
    background-color: #002d57;
-}
-.shop_logo{
-   margin-top: 0;
-   text-align: center;
-   font-size: 70px;
-   font-weight: bold;
-   font-family: 'Dancing Script';
-   color: white;
 }
 .php{
   /* text-align: center; */
@@ -80,9 +72,6 @@ input{
 input:focus{
   outline: none;
 }
-.hide{
-   display: none;
-}
 button:focus{
    outline: none;
  }
@@ -132,20 +121,4 @@ button:focus{
    font-size: large;
    margin-right: 1rem;
    color: white;
-}
-.checkout{
-   text-align: right;
-   font-weight: bolder;
-   font-size: 1.5rem;
-   width: 87%;
-   margin-bottom: 0.5rem;
-}
-.checkout a{
-   color: #002d57;
-   background-color: white;
-   border-radius: 6px;
-   text-decoration: none;
-}
-.checkout a:hover{
-   color: red;
 }

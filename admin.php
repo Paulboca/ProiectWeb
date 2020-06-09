@@ -51,6 +51,9 @@ if (mysqli_connect_errno()) {
     <form method="get" action="database.csv">
    <button type="submit">Download CSV</button>
    </form>
+   <form method="POST" action="database.pdf">
+   <button type="submit">Download PDF</button>
+   </form>
   <div class="results">
   
   <?php
@@ -94,6 +97,17 @@ if (mysqli_connect_errno()) {
     } 
 }
   ?>
+
+<?php
+    require('fpdf182/fpdf.php');
+    if(isset($_POST['fields'])){
+    $pdf = new FPDF();
+    $pdf->AddPage();
+    $pdf->SetFont('Arial','B',16);
+    $pdf->Cell(40,10,$_POST['fields']);
+    $pdf->Output('database.pdf', 'I');
+}
+    ?>
   </div>
 </body>
 </html>

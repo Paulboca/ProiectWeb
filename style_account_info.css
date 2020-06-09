@@ -1,0 +1,38 @@
+html, body{
+    /* position: static; */
+    background-color: #E6E6EA;
+ }
+ .textbox{
+    position: absolute;
+    top: 0%;
+    left: 50%;
+ 
+    margin-left: -15rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+ 
+    height: 40rem;
+    width: 30rem;
+    background-color: white;
+    /* display: none; */
+ }
+ #leftbox{
+    display: none;
+    position: absolute;
+    top: 0%;
+    left: 40%;
+    /* right: 60%; */
+ 
+    /* margin-left: 1%; */
+    /* margin-right: 15rem; */
+    padding: 15rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+ 
+    height: 40rem;
+    width: 30rem;
+    background-color: white;   
+ }
+ *:focus{
+    outline: none;
+ }

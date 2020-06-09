@@ -7,30 +7,6 @@
 	}else{
 		$name = "Hi, ". $_COOKIE['user_fName'];
 	}
-	
-	if (!isset($_COOKIE['device_id']) || empty($_COOKIE['device_id'])) {
-
-		$link0 = mysqli_connect("localhost", "root", "", "shop");
-		if($link0 === false){
-			die("ERROR: Could not connect. " . mysqli_connect_error());
-		}
-
-		$res = 1;
-		while($res != 0 ){
-			$random = rand(1,2000000000);
-
-			$sql = mysqli_prepare($link0, "SELECT count(id_client) from bag where id_client = ? ");
-			mysqli_stmt_bind_param($sql, "d", $random);
-			mysqli_stmt_execute($sql);
-			mysqli_stmt_bind_result ( $sql, $res);
-			mysqli_stmt_fetch($sql);
-
-			if($res == 0){
-				setcookie("device_id", "$random", time()+(86400*30), "/");
-			}
-		}
-		mysqli_close($link0);
-	}
 ?>
 <!DOCTYPE html>
 <html  lang="en">
