@@ -76,8 +76,8 @@ if (mysqli_connect_errno()) {
         die ('A survenit o eroare la interogare');
     } 
     while ($inreg = $rez->fetch_assoc()) {
-        if( isset($user_id)){$instructiune='insert into bag values ('.rand().','.$user_id.','.$inreg['id'].',"'.$inreg['denumire'].'","'.$inreg['categorie'].'",'.$inreg['pret'].',1)';}
-        else $instructiune='insert into bag values ('.rand().'0,'.$inreg['id'].',"'.$inreg['denumire'].'","'.$inreg['categorie'].'",'.$inreg['pret'].',1)';
+        if( isset($user_id)){$instructiune='insert into bag values ('.rand(1,2000000000).','.$inreg['id'].',"'.$inreg['denumire'].'","'.$inreg['categorie'].'",'.$inreg['pret'].',1'.$cookie['device_id'].')';}
+        else $instructiune='insert into bag values ('.rand(1,2000000000).$inreg['id'].',"'.$inreg['denumire'].'","'.$inreg['categorie'].'",'.$inreg['pret'].',1,'.$cookie['device_id'].')';
     }
     if (!($rez = $mysql->query ($instructiune))) {
                     die ('Error on query');
