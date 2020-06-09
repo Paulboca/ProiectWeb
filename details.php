@@ -66,7 +66,7 @@ if (mysqli_connect_errno()) {
 	</div>
 	<p class="product-details">'.$inreg['descriere'].'</p>
 	<p class="product-details">'.$inreg['compozitie'].'</p>
-                            );
+                            ');
                 }
                 $mysql->close();
                 ?>
