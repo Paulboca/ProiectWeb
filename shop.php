@@ -9,7 +9,7 @@ $mysql = new mysqli (
 
 // verificam daca am reusit
 if (mysqli_connect_errno()) {
-	die ('Conexiunea a esuat...');
+	die ('ERROR: Could not connect.');
 }
 ?>
 <html>
@@ -50,12 +50,14 @@ if (mysqli_connect_errno()) {
                         </p>
                         <p><input class="button1" type="submit" value="Detalii"/></p>
                         </form>
-                        <button class="button2">Add to cart</button>
+                        <form action="shop.php" method="post"><input class="f_input1" type="text" name="prd" id="prd" value="'.$inreg['id'].'" size="30" >
+                        </p>
+                        <p><input class="button2" type="submit" value="Add to cart"/></p>
+                        </form>
                         <div class="pret">'.$inreg['pret'].' Lei</div>
                         </li>
                         ');
                 }
-                $mysql->close();
                 ?>
 
             </div>
@@ -64,6 +66,33 @@ if (mysqli_connect_errno()) {
 		include ('footer.php')
 		?>
 
+
+<?php
+    if( isset($_POST['prd'])){
+    $prd = $_POST["prd"];
+    $testProd='select id_produs,id_client from bag where id_produs='.$prd.' and id_client='.$_COOKIE['device_id'].';';
+        if (!($rez2 = $mysql->query ($testProd))) {
+            die ('A survenit o eroare la interogare');
+        } 
+        echo $_COOKIE['device_id'];
+        if(is_null($rez2->fetch_assoc())){
+            $instructiune='select id,denumire,categorie,pret from products where id='.$prd.';';
+            if (!($rez3 = $mysql->query ($instructiune))) {
+                die ('A survenit o eroare la interogare');
+            } 
+            while ($inreg = $rez3->fetch_assoc()) {
+                if( isset($user_id)){$instructiune='insert into bag (id_produs,denumire,categorie,pret,cantitate,id_client) values ('.$inreg['id'].',"'.$inreg['denumire'].'","'.$inreg['categorie'].'",'.$inreg['pret'].',1'.$_COOKIE['device_id'].')';}
+            else {$instructiune='insert into bag (id_produs,denumire,categorie,pret,cantitate,id_client) values ('.$inreg['id'].',"'.$inreg['denumire'].'","'.$inreg['categorie'].'",'.$inreg['pret'].',1,'.$_COOKIE['device_id'].')';}
+            }
+            if (!($rez3 = $mysql->query ($instructiune))) {
+                            die ('Error on query');
+            }
+        }
+        else{
+            echo '<script>alert("Produsul este deja in cos")</script>';
+        }
+    }
+?>
 <script>
 function myFunction() {
     var input, filter, ul, li, a, i, txtValue;
