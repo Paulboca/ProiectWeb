@@ -70,18 +70,27 @@ if (mysqli_connect_errno()) {
 <?php
     if( isset($_POST['prd'])){
     $prd = $_POST["prd"];
-    $instructiune='select id,denumire,categorie,pret from products where id='.$prd.';';
-    
-    if (!($rez = $mysql->query ($instructiune))) {
-        die ('A survenit o eroare la interogare');
-    } 
-    while ($inreg = $rez->fetch_assoc()) {
-        if( isset($user_id)){$instructiune='insert into bag values ('.rand(1,2000000000).','.$inreg['id'].',"'.$inreg['denumire'].'","'.$inreg['categorie'].'",'.$inreg['pret'].',1'.$cookie['device_id'].')';}
-        else $instructiune='insert into bag values ('.rand(1,2000000000).$inreg['id'].',"'.$inreg['denumire'].'","'.$inreg['categorie'].'",'.$inreg['pret'].',1,'.$cookie['device_id'].')';
-    }
-    if (!($rez = $mysql->query ($instructiune))) {
-                    die ('Error on query');
-    }  
+    $testProd='select id_produs,id_client from bag where id_produs='.$prd.' and id_client='.$_COOKIE['device_id'].';';
+        if (!($rez2 = $mysql->query ($testProd))) {
+            die ('A survenit o eroare la interogare');
+        } 
+        echo $_COOKIE['device_id'];
+        if(is_null($rez2->fetch_assoc())){
+            $instructiune='select id,denumire,categorie,pret from products where id='.$prd.';';
+            if (!($rez3 = $mysql->query ($instructiune))) {
+                die ('A survenit o eroare la interogare');
+            } 
+            while ($inreg = $rez3->fetch_assoc()) {
+                if( isset($user_id)){$instructiune='insert into bag (id_produs,denumire,categorie,pret,cantitate,id_client) values ('.$inreg['id'].',"'.$inreg['denumire'].'","'.$inreg['categorie'].'",'.$inreg['pret'].',1'.$_COOKIE['device_id'].')';}
+            else {$instructiune='insert into bag (id_produs,denumire,categorie,pret,cantitate,id_client) values ('.$inreg['id'].',"'.$inreg['denumire'].'","'.$inreg['categorie'].'",'.$inreg['pret'].',1,'.$_COOKIE['device_id'].')';}
+            }
+            if (!($rez3 = $mysql->query ($instructiune))) {
+                            die ('Error on query');
+            }
+        }
+        else{
+            echo '<script>alert("Produsul este deja in cos")</script>';
+        }
     }
 ?>
 <script>
