@@ -66,9 +66,6 @@ if (mysqli_connect_errno()) {
 	</div>
 	<p class="product-details">'.$inreg['descriere'].'</p>
 	<p class="product-details">'.$inreg['compozitie'].'</p>
-	<button class="reviews">Evalueaza</button>
-	<button class="delivery">Livrare si plata</button>
-    <button class="favorite">Adauga la favorite</button>'
                             );
                 }
                 $mysql->close();
