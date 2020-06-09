@@ -2,9 +2,9 @@
 // error_reporting(0);
 session_start();
 
-if (isset($_COOKIE['user_fName']) && !empty($_COOKIE['user_fName'])) {
-    Header('Location: account.php');
-}
+// if (isset($_COOKIE['user_fName']) && !empty($_COOKIE['user_fName'])) {
+//     Header('Location: account.php');
+// }
 
 if (isset($_POST['email']) && !empty($_POST['email'])) {
     $_SESSION['email'] = $_POST['email'];
