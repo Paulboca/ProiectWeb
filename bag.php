@@ -9,7 +9,7 @@
     if($link1 === false){
         die("ERROR: Could not connect. " . mysqli_connect_error());
     }
-
+    
     if( isset($_POST['refresh'])){
         $sql1 = mysqli_prepare($link1, "UPDATE bag SET cantitate = ? WHERE id_produs = ? ");
         mysqli_stmt_bind_param($sql1, "dd", $_POST['cant'], $_POST['id']);
@@ -41,8 +41,8 @@
             </div>
             <div class="php">
                 <?php
-                    $sql = mysqli_prepare($link1, "SELECT id_produs, denumire, categorie, pret, cantitate from bag");
-                    // mysqli_stmt_bind_param($sql, "s", $email);
+                    $sql = mysqli_prepare($link1, "SELECT id_produs, denumire, categorie, pret, cantitate from bag where id_client = ?");
+                    mysqli_stmt_bind_param($sql, "d", $_COOKIE['device_id']);
                     mysqli_stmt_execute($sql);
                     mysqli_stmt_bind_result ( $sql, $id, $den, $cat, $pret, $cant);
                     

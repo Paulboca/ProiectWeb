@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gazdă: 127.0.0.1
--- Timp de generare: iun. 08, 2020 la 08:49 PM
+-- Timp de generare: iun. 09, 2020 la 12:59 PM
 -- Versiune server: 10.4.11-MariaDB
 -- Versiune PHP: 7.4.3
 
@@ -34,17 +34,18 @@ CREATE TABLE `bag` (
   `denumire` varchar(100) DEFAULT NULL,
   `categorie` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
   `pret` int(100) DEFAULT NULL,
-  `cantitate` int(100) DEFAULT NULL
+  `cantitate` int(100) DEFAULT NULL,
+  `id_client` int(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Eliminarea datelor din tabel `bag`
 --
 
-INSERT INTO `bag` (`id`, `id_produs`, `denumire`, `categorie`, `pret`, `cantitate`) VALUES
-(1, 7, 'bluza cu maneci bufante', 'femei', 80, 4),
-(2, 8, 'pantaloni scurti', 'femei', 100, 4),
-(3, 1, 'tricou polo slim fit', 'barbati', 40, 2);
+INSERT INTO `bag` (`id`, `id_produs`, `denumire`, `categorie`, `pret`, `cantitate`, `id_client`) VALUES
+(1, 7, 'bluza cu maneci bufante', 'femei', 80, 4, 747046509),
+(2, 8, 'pantaloni scurti', 'femei', 100, 4, 747046509),
+(3, 1, 'tricou polo slim fit', 'barbati', 40, 2, 330553564);
 
 --
 -- Indexuri pentru tabele eliminate
