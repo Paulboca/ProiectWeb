@@ -51,8 +51,8 @@ if (mysqli_connect_errno()) {
     <form method="get" action="database.csv">
    <button type="submit">Download CSV</button>
    </form>
-   <form method="POST" action="database.pdf">
-   <button type="submit">Download PDF</button>
+   <form method="get" action="database.pdf">
+   <button type="submit">View PDF</button>
    </form>
   <div class="results">
   
@@ -81,33 +81,33 @@ if (mysqli_connect_errno()) {
     }
     }
     $fp = fopen('database.csv', 'w+');
+    require('fpdf182/fpdf.php');
+    $pdf = new FPDF();
+    $pdf->SetFont('Arial','B',16);
     fputcsv($fp, $columns);
+    $pdf->AddPage();
+    foreach ($columns as $item) {
+        $pdf->Cell(0,20,$item,0,1);
+    }
     if (!($rez = $mysql->query ('select '.$fields.' '.$rest))) {
                     die ('Error on query');
     }
     else {
         while ($inreg = $rez->fetch_assoc()) {
             fputcsv($fp, $inreg);
+            $pdf->AddPage();
+            foreach ($inreg as $atr) {
+                $pdf->Cell(0,20,$atr,0,1);
+            }
         }
     fclose($fp);
-
+    $pdf->Output('database.pdf', 'F');
     //header("Content-type: text/x-csv");
     //header("Content-Disposition: attachment; filename=".$csv_filename."");
     }
     } 
 }
   ?>
-
-<?php
-    require('fpdf182/fpdf.php');
-    if(isset($_POST['fields'])){
-    $pdf = new FPDF();
-    $pdf->AddPage();
-    $pdf->SetFont('Arial','B',16);
-    $pdf->Cell(40,10,$_POST['fields']);
-    $pdf->Output('database.pdf', 'I');
-}
-    ?>
   </div>
 </body>
 </html>
