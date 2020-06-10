@@ -1,9 +1,5 @@
 <?php
     session_start();
-    // if (!isset($_COOKIE['user_email']) || empty($_COOKIE['user_email'])) {
-    //     Header('Location: login.php');
-    //     exit();
-    // }
 
     $link1 = mysqli_connect("localhost", "root", "", "shop");    
     if($link1 === false){
@@ -11,9 +7,16 @@
     }
     
     if( isset($_POST['refresh'])){
-        $sql1 = mysqli_prepare($link1, "UPDATE bag SET cantitate = ? WHERE id_produs = ? ");
-        mysqli_stmt_bind_param($sql1, "dd", $_POST['cant'], $_POST['id']);
-        mysqli_stmt_execute($sql1);
+        if($_POST['cant'] > 0){
+            $sql1 = mysqli_prepare($link1, "UPDATE bag SET cantitate = ? WHERE id_produs = ? ");
+            mysqli_stmt_bind_param($sql1, "dd", $_POST['cant'], $_POST['id']);
+            mysqli_stmt_execute($sql1);
+        }
+        if($_POST['cant'] == 0){
+            $sql1 = mysqli_prepare($link1, "DELETE FROM bag WHERE id_produs = ? ");
+            mysqli_stmt_bind_param($sql1, "d", $_POST['id']);
+            mysqli_stmt_execute($sql1);
+        }
     }
 ?>
 <!doctype html>
