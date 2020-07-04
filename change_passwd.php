@@ -34,8 +34,8 @@ if (isset($_POST['cpswd']) && !empty($_POST['cpswd'])) {
 	<link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-	<link href="style_menu.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" />
-	<link href="style_changePasswd.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" />
+	<link href="styles/style_menu.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" />
+	<link href="styles/style_changePasswd.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" />
 	
     <meta charset="utf-8">
     <title>Fashion E-Shop</title>
@@ -86,7 +86,7 @@ if (isset($_POST['cpswd']) && !empty($_POST['cpswd'])) {
 				</div>
 				
                 <div class="php">
-					<?php include ('script_change_passwd.php'); ?>
+					<?php include ('php_scripts/script_change_passwd.php'); ?>
                 </div>
 			</div>
 	    </div>

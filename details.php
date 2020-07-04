@@ -16,10 +16,8 @@ if (mysqli_connect_errno()) {
 	<head lang="en">
 		<meta charset="utf-8">
     	<link rel="icon" href="img/favicon.png" type="image/ico"> <!-- favicon -->
-		<link href="style_menu.css" rel="stylesheet">
-		<link href="style_shop.css" rel="stylesheet">
-		<link href="style_footer.css" rel="stylesheet">
-		<link href="style_mybutton.css" rel="stylesheet">
+		<link href="styles/style_menu.css" rel="stylesheet">
+		<link href="styles/style_shop.css" rel="stylesheet">
 		<title>Fashion E-Shop</title>
 	</head>
 	<body>

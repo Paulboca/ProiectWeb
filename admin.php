@@ -22,7 +22,7 @@ if (mysqli_connect_errno()) {
 <html>
   <head lang="en">
   <meta charset="UTF-8">
-  <link href="style_admin.css" rel="stylesheet">
+  <link href="styles/style_admin.css" rel="stylesheet">
   </head>
 <body>
   <label>Use the Select fields if you want to see the query results. For everything else use this one</label>

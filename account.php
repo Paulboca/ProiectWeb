@@ -16,8 +16,8 @@
     <meta name="Description" content="The my account page for the FES site.">
 	<meta name="viewport" content="width=device-width">
     <link rel="icon" href="img/favicon.png" type="image/ico"> <!-- favicon -->
-	<link href="style_menu.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" />
-	<link href="style_account.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" />
+	<link href="styles/style_menu.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" />
+	<link href="styles/style_account.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" />
 
     <meta charset="utf-8">
     <title>Fashion E-Shop</title>
@@ -45,9 +45,9 @@
             </div>
             <div class="php">
                 <?php
-                    include("script_account_details.php");
-                    include("script_update_email.php");
-                    include("script_update_passwd.php");
+                    include ("php_scripts/script_account_details.php");
+                    include ("php_scripts/script_update_email.php");
+                    include ("php_scripts/script_update_passwd.php");
                 ?>
             </div>
 

@@ -25,8 +25,8 @@
     <meta name="Description" content="The shopping bag page for the FES site.">
 	<meta name="viewport" content="width=device-width">
     <link rel="icon" href="img/favicon.png" type="image/ico"> <!-- favicon -->
-	<link href="style_menu.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" />
-    <link href="style_bag.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" />
+	<link href="styles/style_menu.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" />
+    <link href="styles/style_bag.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 
     <meta charset="utf-8">
