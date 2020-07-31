@@ -39,7 +39,7 @@ if (isset($_POST['pswd']) && !empty($_POST['pswd'])) {
         ?>
       
     <form method="POST" >
-        <div class="topline">
+        <!-- <div class="topline"> -->
             <div class="textbox">
                 <div class="login">
                     <p class="login_logo">Login</p>
@@ -74,7 +74,7 @@ if (isset($_POST['pswd']) && !empty($_POST['pswd'])) {
                     <?php include ('php_scripts/script_login.php'); ?>
                 </div>
             </div>
-        </div>
+        <!-- </div> -->
     </form>
 </body>
 </html>

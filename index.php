@@ -11,25 +11,8 @@
 		<title>Fashion E-Shop</title>
 	</head>
 	<body>
-		<?php
-		include ('menu.php')
-		?>
-
-		<div class="main">
-		<p> Free delivery over 100 ron</p>
-		<p>We will deliver your purchase within 2-3 days after receiving your order confirmation.</p>
-
-	<img class = "poza3" src="img/poza3.jpg" alt="News"/>
-	<a href="shop.php" title="Shop">
-	<img class = "sales" src="img/sales_clothes.jpg" alt="News" />
-	</a>
-	<p> *This week we have discount on four clothing. Be fast!! Within the available stocks. </p>
-	<p> **The discount is applied when adding the product to the cart. </p>
-	
-	</div>
-		<?php
-		include ('footer.php')
-		?>
+		<?php include ('menu.php') ?>
+		
 	</body>
 
 </html>

@@ -9,11 +9,12 @@ html, body{
    z-index: -1;
 }
 .textbox{
-   position: absolute;
+   /* position: absolute; */
    top: 0;
    left: 50%;
 
-   margin-left: -15rem;
+   margin: auto;
+   /* margin-left: -15rem; */
    margin-top: 5rem;
    margin-bottom: 5rem;
 
